@@ -1,0 +1,14 @@
+<div>
+    <app-notification></app-notification>
+
+    <button mat-button  [matMenuTriggerFor]="menu">
+
+        <!-- TODO: Replace this icon with an image, eventually -->
+        <mat-icon>face</mat-icon>     
+            {{user.firstname}}
+    </button>
+<mat-menu #menu="matMenu" [overlapTrigger]="false">
+    <button mat-menu-item routerLink='/profile'>My Profile</button>
+    <button mat-menu-item routerLink='/profile'>Settings</button>
+</mat-menu>
+    </div>

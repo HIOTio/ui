@@ -1,0 +1,7 @@
+<button mat-button [matMenuTriggerFor]="notimenu"><mat-icon (click)="demoSnackBar()">notifications</mat-icon></button>
+
+
+    <mat-menu #notimenu="matMenu" [overlapTrigger]="false">
+        <div *ngFor="let noti of notifications">
+          <mat-card>{{noti.message}}</mat-card></div>
+    </mat-menu>

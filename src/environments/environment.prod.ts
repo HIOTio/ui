@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  url: 'http://someserver/myApp',
+  services: 'http://backendServer'
 };

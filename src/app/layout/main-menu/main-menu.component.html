@@ -1,0 +1,34 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav mode="over" #sidenav fxShow fxHide.gt-md>
+ 
+        <div fxLayout="column">
+            <button mat-button routerLink="/" (click)="close()" class="fill"  routerLinkActive="active">
+              <mat-icon>home</mat-icon>
+            </button>
+            <app-menu-items [orientation]="'vert'" (closeNav)="close()"></app-menu-items>
+        </div>
+     <!--   <app-profile-button class="fill"></app-profile-button> -->
+    </mat-sidenav>
+ 
+    <div>
+        <mat-toolbar color="primary">
+ 
+            <button mat-button (click)="sidenav.open()"  fxShow fxHide.gt-md>
+                  <mat-icon>menu</mat-icon>
+          </button>
+ 
+            <div fxLayout="row" fxHide fxShow.gt-md>
+                <button mat-button routerLink="/">
+                <mat-icon>home</mat-icon>            
+              </button>
+                <app-menu-items [orientation]="'hori'"></app-menu-items>
+
+
+            </div>
+            <span class="fill-space"></span>
+           <app-profile-button></app-profile-button> 
+        </mat-toolbar>
+    </div>
+    <div [@routerAnimation]="getRouteAnimation(route)"><router-outlet #route="outlet"></router-outlet></div>
+    
+</mat-sidenav-container>
