@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import {
     MatButtonModule,
     MatCheckboxModule,
@@ -11,12 +12,17 @@ import {
     MatMenuModule,
     MatSnackBarModule,
     MatExpansionModule,
+    MatTabsModule,
+    MatInputModule,
+    MatFormFieldModule,
     MatIconModule,
+    MatSlideToggleModule,
     MatIconRegistry
 } from '@angular/material';
 
 @NgModule({
   imports: [
+    FormsModule,
     FlexLayoutModule,
     MatButtonModule,
     MatCheckboxModule,
@@ -27,9 +33,15 @@ import {
     MatMenuModule,
     MatSnackBarModule,
     MatExpansionModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSlideToggleModule,
     MatIconModule
   ],
   exports: [
+    FormsModule,
+    FlexLayoutModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
@@ -39,6 +51,10 @@ import {
     MatMenuModule,
     MatSnackBarModule,
     MatExpansionModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSlideToggleModule,
     MatIconModule
   ],
   providers: [MatIconRegistry]

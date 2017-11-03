@@ -25,7 +25,6 @@ public menuItems= [
   constructor() { }
 
   ngOnInit() {
-    console.log(this.orientation);
   }
   closeSideNav(evt, link) {
     this.closeNav.emit(evt);

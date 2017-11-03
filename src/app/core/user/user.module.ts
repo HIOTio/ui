@@ -24,7 +24,7 @@ import { LogoutComponent } from './logout/logout.component';
       { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService], data: {state: 'profile'}},
       { path: 'login', component: LoginRegisterComponent, data: {state: 'login'}},
       { path: 'settings', component: UserSettingsComponent, canActivate: [AuthGuardService]},
-      { path: 'logout', component: LogoutComponent, canActivate: [AuthGuardService]}
+      { path: 'logout', component: LogoutComponent}
     ])
   ],
   exports: [ProfileButtonComponent],
