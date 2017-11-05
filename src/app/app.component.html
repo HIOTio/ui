@@ -1,1 +1,5 @@
-<app-main-menu ></app-main-menu>
+
+  <mat-sidenav-container fullscreen>
+    <hiot-main-menu></hiot-main-menu>
+    <div [@routerAnimation]="getRouteAnimation(route)"><router-outlet class="main-view" #route="outlet"></router-outlet></div>
+    </mat-sidenav-container>

@@ -5,7 +5,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {RouterModule, Routes} from '@angular/router';
 import { UserModule } from '../core/user/user.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import {MaterialModule} from '../material.module';
+import {MaterialModule} from '../material/material.module';
 import { MenuItemsComponent } from './main-menu/menu-items/menu-items.component';
 
 @NgModule({

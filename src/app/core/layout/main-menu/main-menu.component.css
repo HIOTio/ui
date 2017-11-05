@@ -1,0 +1,6 @@
+.wideBtn {
+    width:100%;
+}
+.fill-space{
+    flex: 1 1 auto;
+}

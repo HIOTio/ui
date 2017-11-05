@@ -1,5 +1,5 @@
-<div>
-    <app-notification></app-notification>
+<div *ngIf="authenticated.loggedIn">
+    <app-notification ></app-notification>
 
     <button mat-button  [matMenuTriggerFor]="menu">
 
@@ -13,3 +13,6 @@
     <button mat-menu-item routerLink='/logout' routerLinkActive='active'>Log out</button>
 </mat-menu>
     </div>
+<div  *ngIf="!authenticated.loggedIn">
+    <button mat-button routerLink='/login'>Login/Register</button>
+</div>

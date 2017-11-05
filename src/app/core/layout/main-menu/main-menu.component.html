@@ -1,0 +1,26 @@
+<!-- large screen -->
+<mat-toolbar color="primary" fxHide fxShow.gt-sm>
+  <button mat-button routerLink='/'><mat-icon>home</mat-icon></button>
+  <div *ngFor="let item of menuItems">
+      <button mat-button routerLink='{{item.link}}'>{{item.title}}</button>
+    </div>
+    <span class="fill-space"></span>
+    <app-login-menu>
+      </app-login-menu>
+</mat-toolbar>
+
+
+
+
+<!-- small screens -->
+<mat-toolbar color="primary" fxShow fxHide.gt-sm>
+    <button mat-button  (click)="sidenav.open()"><mat-icon>menu</mat-icon></button>
+    <span class="fill-space"></span>
+    <app-login-menu>
+    </app-login-menu>
+  </mat-toolbar>
+  <mat-sidenav #sidenav fxShow fxHide.gt-sm color="primary">
+      <button class="wideBtn" (click)="sidenav.close()"  mat-button routerLink='/'><mat-icon>home</mat-icon></button>     
+      <button *ngFor="let item of menuItems" class="wideBtn" (click)="sidenav.close()"  mat-button routerLink='{{item.link}}'>{{item.title}}</button>
+    
+  </mat-sidenav>

@@ -1,0 +1,16 @@
+<div>
+<div *ngFor="let dep of deployments">
+    <mat-card >
+        <mat-card-title>{{dep.deployment.name}}</mat-card-title>
+        <mat-card-content><div><i>Desc:</i> {{dep.deployment.description}}</div>
+          <div><i>My role:</i> {{dep.role.name}}</div>
+          <div><app-deployment-users-list [deployment]="dep.deployment._id"></app-deployment-users-list></div>
+        </mat-card-content>
+        <mat-card-actions>
+          <app-deployment-edit></app-deployment-edit>
+          
+          <app-deployment-user-add></app-deployment-user-add></mat-card-actions>
+      </mat-card>
+ 
+  </div>  
+</div>

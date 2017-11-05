@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService} from '../auth.service';
 @Component({
   selector: 'app-login-register',
   templateUrl: './login-register.component.html',
@@ -10,12 +10,16 @@ export class LoginRegisterComponent implements OnInit {
     username : '',
     password : ''
   };
+  loginStatus={
+    errroMsg: '',
+    loggedIn: false
+  };
   newUser= {
 
   };
-  constructor() { }
+  constructor(private _auth: AuthService) { }
   login() {
-    console.log(this.user);
+    this.loginStatus = this._auth.login(this.user.username, this.user.password, '');
   }
   ngOnInit() {
   }
