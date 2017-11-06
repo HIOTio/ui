@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { CdkTableModule } from '@angular/cdk/table';
 import 'hammerjs';
 import {
   MatButtonModule,
@@ -49,7 +50,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    CdkTableModule
   ],
   declarations: [],
   exports: [
@@ -76,7 +78,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    CdkTableModule
   ],
   providers: [MatIconRegistry]
 })

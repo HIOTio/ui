@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeploymentListComponent implements OnInit {
 
+  view = 'cards';
   public deployments: Observable <any>;
   constructor(private depServ: DeploymentService) { }
 
@@ -18,6 +19,13 @@ export class DeploymentListComponent implements OnInit {
 
     });
 
+  }
+  viewToggle() {
+    if (this.view === 'cards') {
+      this.view = 'table';
+    }else {
+      this.view = 'cards';
+    }
   }
 
 }

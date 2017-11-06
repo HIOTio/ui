@@ -1,4 +1,5 @@
-<div>
+<div *ngIf='view=="cards"'>
+    <button mat-button (click)="viewToggle()">View as Table</button>
 <div *ngFor="let dep of deployments">
     <mat-card >
         <mat-card-title>{{dep.deployment.name}}</mat-card-title>
@@ -13,4 +14,7 @@
       </mat-card>
  
   </div>  
+</div>
+<div *ngIf='view=="table"'><button mat-button (click)="viewToggle()">View as Cards</button>
+  <app-deployment-table-view></app-deployment-table-view>
 </div>

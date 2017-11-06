@@ -1,0 +1,33 @@
+<div class="table-container mat-elevation-z8">
+    <cdk-table #table [dataSource]="dataSource" class="table-table">
+  
+      <ng-container cdkColumnDef="deploymentName">
+        <cdk-header-cell *cdkHeaderCellDef class="table-header-cell"> Name </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="table-cell"> {{row.deployment.name}} </cdk-cell>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container cdkColumnDef="deploymentType">
+        <cdk-header-cell *cdkHeaderCellDef class="table-header-cell"> Type </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="table-cell"> {{row.deployment.deploymentType}}</cdk-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container cdkColumnDef="role">
+        <cdk-header-cell *cdkHeaderCellDef class="table-header-cell"> My Role </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="table-cell"> {{row.role.name}} </cdk-cell>
+      </ng-container>
+  
+      <!-- Color Column -->
+      <ng-container cdkColumnDef="color">
+        <cdk-header-cell *cdkHeaderCellDef class="table-header-cell">Color</cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="table-cell"
+                  [style.color]="row.color">
+          {{row.color}}
+        </cdk-cell>
+      </ng-container>
+  
+      <cdk-header-row *cdkHeaderRowDef="displayedColumns" class="table-header-row"></cdk-header-row>
+      <cdk-row *cdkRowDef="let row; columns: displayedColumns;" class="table-row"></cdk-row>
+    </cdk-table>
+  </div>

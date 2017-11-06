@@ -12,6 +12,7 @@ import { DeploymentCreateComponent } from './deployment-create/deployment-create
 import { DeploymentEditComponent } from './deployment-edit/deployment-edit.component';
 import { AddComponent } from './users/add/add.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
+import { DeploymentTableViewComponent } from './deployment-table-view/deployment-table-view.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -29,7 +30,8 @@ import { UsersListComponent } from './users/users-list/users-list.component';
     DeploymentCreateComponent,
     DeploymentEditComponent,
     AddComponent,
-    UsersListComponent],
+    UsersListComponent,
+    DeploymentTableViewComponent],
   exports:[DeploymentHomeCardComponent]
 })
 export class DeploymentModule { }
