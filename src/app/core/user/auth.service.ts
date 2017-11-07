@@ -1,3 +1,5 @@
+import { DeploymentService } from '../../components/deployment/deployment.service';
+import { UpdatesService } from '../../updates.service';
 import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs/Observable';
@@ -15,7 +17,9 @@ export class AuthService {
   constructor(public jwtHelper: JwtHelper,
     private http: Http,
     private _router: Router,
-    private _profile: ProfileService
+    private _profile: ProfileService,
+    private _updates: UpdatesService,
+    private _deployments: DeploymentService
   ) {
     const token = localStorage.getItem('token');
     this.authStatus.loggedIn = false;
@@ -23,8 +27,19 @@ export class AuthService {
       if ( !this.jwtHelper.isTokenExpired(token)) {
         this.authStatus.loggedIn = true;
         this.getUserDetails (token);
+        this.subscribeToChannels();
       }
     }
+  }
+  private subscribeToChannels() {
+    this._deployments.getDeployments()
+    .subscribe(data => {
+      console.log(data);
+      data.forEach(channel => {
+        this._updates.addChannel('ws://localhost:3000/deployment_' + channel.deployment._id);
+        console.log('subscribed to ' + channel._id);
+      });
+    });
   }
   private getUserDetails(token){
     this._profile.setUser(this.jwtHelper.decodeToken(token).id);
@@ -40,7 +55,7 @@ export class AuthService {
     if (route === '') {
       route = '/';
     }
-    route.replace('\\','/');
+    route.replace('\\', '/');
       this.http.post('http://localhost:3000/auth', {username: username, password: password})
       .map(res => res.json())
       .subscribe(

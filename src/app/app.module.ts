@@ -22,6 +22,9 @@ import { ControlCentreModule } from './features/control-centre/control-centre.mo
 import { HealthModule } from './features/health/health.module';
 import { ReportsModule} from './features/reports/reports.module';
 import {UserModule} from './core/user/user.module';
+import { UpdatesService} from './updates.service';
+import { SocketsService } from './sockets.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +55,9 @@ import {UserModule} from './core/user/user.module';
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
       multi: true
-    }
+    },
+    UpdatesService,
+    SocketsService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,8 @@
+import { UpdatesService } from '../../updates.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {AuthGuardService } from '../../core/user/auth-guard.service';
+import {Observable } from 'rxjs/Observable';
 import {RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../../material/material.module';
 import { DeploymentListComponent } from './deployment-list/deployment-list.component';
@@ -32,6 +34,11 @@ import { DeploymentTableViewComponent } from './deployment-table-view/deployment
     AddComponent,
     UsersListComponent,
     DeploymentTableViewComponent],
-  exports:[DeploymentHomeCardComponent]
+  exports: [DeploymentHomeCardComponent]
 })
-export class DeploymentModule { }
+export class DeploymentModule {
+  myDeployments: Observable<any>;
+  constructor(
+  ) {}
+
+ }
