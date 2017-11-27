@@ -2,9 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   trigger, state, style, animate, transition, query,
 } from '@angular/animations';
-import { SocketsService } from './sockets.service';
 import { UpdatesService } from './updates.service';
 import { DeploymentService} from './components/deployment/deployment.service';
+import {NotificationComponent} from './core/user/notification/notification.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -43,11 +43,17 @@ import { DeploymentService} from './components/deployment/deployment.service';
     ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'app';
+  loading=true;
   constructor() {
+  }
+  sendMsg(){
   }
   getRouteAnimation(outlet) {
     return outlet.activatedRouteData.state;
+  }
+  ngOnInit(){
+    this.loading=false;
   }
 }

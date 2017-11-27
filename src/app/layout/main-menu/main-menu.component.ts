@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   trigger, state, style, animate, transition, query,
 } from '@angular/animations';
-
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
@@ -41,6 +40,7 @@ import {
     ])
   ]
 })
+
 export class MainMenuComponent implements OnInit {
   @ViewChild('sidenav') sidenav;
   constructor() { }

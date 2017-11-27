@@ -1,3 +1,41 @@
-<p>
-  deployment-details works!
-</p>
+<mat-spinner *ngIf="!details"></mat-spinner>
+<mat-card *ngIf="details">
+  <mat-card-title>
+      {{details.name}}
+  </mat-card-title>
+    <mat-card-subtitle>
+     {{details.description}}
+    </mat-card-subtitle>
+    <mat-card-content>
+        <mat-tab-group [(selectedIndex)]="selectedTabIndex">
+            <mat-tab label="Summary">
+
+                    <app-deployment-edit></app-deployment-edit>
+            </mat-tab>
+            <mat-tab label="Users">
+
+                    <app-deployment-users-list [deployment]="details._id"></app-deployment-users-list>
+            </mat-tab>
+            <mat-tab label="Stats">
+
+            </mat-tab>
+
+            <mat-tab label="Devices">
+                    <app-device-list [deploymentId]="details._id"></app-device-list>
+                </mat-tab>
+                <mat-tab label="Real-Time">
+                    <app-real-time></app-real-time>
+                </mat-tab>
+                <mat-tab label="Settings">
+                        <div *ngIf="selectedTabIndex == 5">
+                                <app-deployment-settings [deployment]="details"></app-deployment-settings>
+                            </div>
+                    </mat-tab>
+        </mat-tab-group>
+    </mat-card-content>
+    <mat-card-actions>
+
+    </mat-card-actions>
+
+</mat-card>
+

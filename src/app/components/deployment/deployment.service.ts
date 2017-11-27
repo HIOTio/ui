@@ -10,7 +10,6 @@ export class DeploymentService {
   constructor(private _http: HttpClient, private _profile: ProfileService) { }
 
   getDeployments(): Observable<any> {
-    console.log(this._profile.getUserId());
     return this._http.get('http://localhost:3000/api/deployment_role/profile/' + this._profile.getUserId());
   }
   deploymentDetails(deploymentId): Observable<any> {

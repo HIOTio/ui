@@ -12,7 +12,6 @@ import {ProfileService} from './profile.service';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { SettingsComponent } from './admin/settings/settings.component';
 import { NotificationComponent } from './notification/notification.component';
-import {NotificationService } from './notification.service';
 import { LogoutComponent } from './logout/logout.component';
 import { RouterModule} from '@angular/router';
 import {MaterialModule } from '../../material/material.module';
@@ -35,7 +34,7 @@ import { LoginMenuComponent } from './login-menu/login-menu.component';
     ProfileComponent,
     ProfileButtonComponent, UserSettingsComponent,
     SettingsComponent, NotificationComponent, LogoutComponent, LoginMenuComponent],
-  providers: [ProfileService, NotificationService, AuthService, AuthGuardService, JwtHelper]
+  providers: [ProfileService,  AuthService, AuthGuardService, JwtHelper]
 })
 
 export class UserModule { }

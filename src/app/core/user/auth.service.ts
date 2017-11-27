@@ -9,7 +9,7 @@ import { Http } from '@angular/http';
 import {ProfileService } from './profile.service';
 @Injectable()
 export class AuthService {
-
+subscriptions=[];
   authStatus= {
     loggedIn: false,
     errorMsg: ''
@@ -18,8 +18,8 @@ export class AuthService {
     private http: Http,
     private _router: Router,
     private _profile: ProfileService,
-    private _updates: UpdatesService,
-    private _deployments: DeploymentService
+    private _deployments: DeploymentService,
+    private _updatesService: UpdatesService
   ) {
     const token = localStorage.getItem('token');
     this.authStatus.loggedIn = false;
@@ -34,10 +34,8 @@ export class AuthService {
   private subscribeToChannels() {
     this._deployments.getDeployments()
     .subscribe(data => {
-      console.log(data);
       data.forEach(channel => {
-        this._updates.addChannel('ws://localhost:3000/deployment_' + channel.deployment._id);
-        console.log('subscribed to ' + channel._id);
+        this._updatesService.connect('ws://localhost:3000/deployment_' + channel.deployment._id);
       });
     });
   }

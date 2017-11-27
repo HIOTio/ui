@@ -17,16 +17,16 @@ export class SocketsService {
   }
 
   private create(url): Subject<MessageEvent> {
-    let ws = new WebSocket(url);
+    const ws = new WebSocket(url);
 
-    let observable = Observable.create(
+    const observable = Observable.create(
       (obs: Observer<MessageEvent>) => {
         ws.onmessage = obs.next.bind(obs),
         ws.onerror = obs.error.bind(obs);
         ws.onclose = obs.complete.bind(obs);
         return ws.close.bind(ws);
       });
-  let observer = {
+  const observer = {
     next: (data: Object) => {
       if (ws.readyState === WebSocket.OPEN) {
         ws.send(JSON.stringify(data));
@@ -35,5 +35,4 @@ export class SocketsService {
   };
   return Subject.create(observer, observable);
   }
-
 }
