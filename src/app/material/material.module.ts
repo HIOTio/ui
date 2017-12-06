@@ -3,23 +3,30 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CdkTableModule } from '@angular/cdk/table';
+
 import 'hammerjs';
 import {
   MatButtonModule,
+  MatAutocompleteModule,
   MatCheckboxModule,
   MatToolbarModule,
   MatCardModule,
   MatDialogModule,
   MatSidenavModule,
   MatMenuModule,
+  MatSelectModule,
   MatSnackBarModule,
   MatExpansionModule,
   MatTabsModule,
+  MatSliderModule,
+  MatNativeDateModule,
+  MatDatepickerModule,
   MatInputModule,
   MatFormFieldModule,
   MatIconModule,
   MatSlideToggleModule,
-  MatIconRegistry
+  MatIconRegistry,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -30,8 +37,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     HttpClientModule,
     MatButtonModule,
+    MatAutocompleteModule,
     MatToolbarModule,
     MatTabsModule,
+    MatSliderModule,
     MatIconModule,
     MatCardModule,
     MatInputModule,
@@ -42,6 +51,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatCardModule,
     MatDialogModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatDatepickerModule,
     MatSidenavModule,
     MatMenuModule,
     MatSnackBarModule,
@@ -51,14 +63,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatIconModule,
     MatSlideToggleModule,
-    CdkTableModule
+    CdkTableModule,
+    MatProgressSpinnerModule
   ],
   declarations: [],
   exports: [
     FormsModule,
     MatButtonModule,
+    MatAutocompleteModule,
     MatToolbarModule,
     MatTabsModule,
+    MatSliderModule,
     MatIconModule,
     MatCardModule,
     MatInputModule,
@@ -69,17 +84,21 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCheckboxModule,
     MatToolbarModule,
     MatCardModule,
+    MatSelectModule,
     MatDialogModule,
     MatSidenavModule,
     MatMenuModule,
     MatSnackBarModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     MatExpansionModule,
     MatTabsModule,
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
     MatSlideToggleModule,
-    CdkTableModule
+    CdkTableModule,
+    MatProgressSpinnerModule
   ],
   providers: [MatIconRegistry]
 })

@@ -1,0 +1,25 @@
+<mat-expansion-panel #epLocation [expanded]="false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Locations
+      </mat-panel-title>
+      <mat-panel-description>
+        location count
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-locations-tree></app-locations-tree>
+
+</mat-expansion-panel>
+<mat-expansion-panel #epUsers  [expanded]="false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Users
+      </mat-panel-title>
+      <mat-panel-description>
+        user count
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-deployment-users-list [deployment]="deployment._id"></app-deployment-users-list>
+
+</mat-expansion-panel>
+

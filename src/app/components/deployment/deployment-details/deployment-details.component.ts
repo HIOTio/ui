@@ -1,5 +1,7 @@
+import { Observable } from 'rxjs/Rx';
+import { DeploymentService } from '../deployment.service';
 import { Component, OnInit } from '@angular/core';
-
+import {Router, ActivatedRoute, Params} from '@angular/router';
 @Component({
   selector: 'app-deployment-details',
   templateUrl: './deployment-details.component.html',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeploymentDetailsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor(private activatedRoute: ActivatedRoute, private depServ: DeploymentService) {}
+    deploymentId= 0;
+    details: Observable<any>;
+    ngOnInit() {
+      // subscribe to router event
+      this.activatedRoute.params.subscribe((params: Params) => {
+          this.deploymentId = params['id'];
+          this.depServ.deploymentDetails(this.deploymentId)
+          .subscribe(data => {
+            this.details = data;
+          });
+        });
+      }
 }

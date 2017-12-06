@@ -1,6 +1,5 @@
-
+<mat-spinner *ngIf="loading"></mat-spinner>
   <mat-sidenav-container fullscreen>
     <hiot-main-menu></hiot-main-menu>
-    ...<button (click)="sendMsg()">Send Message</button>
     <div [@routerAnimation]="getRouteAnimation(route)"><router-outlet class="main-view" #route="outlet"></router-outlet></div>
     </mat-sidenav-container>

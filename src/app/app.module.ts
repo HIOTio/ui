@@ -5,6 +5,7 @@ import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 import { HttpInterceptorService } from './core/user/http-interceptor.service';
+import { UpdatesService} from './updates.service';
 import { MaterialModule} from './material/material.module';
 import {LayoutModule } from './core/layout/layout.module';
 import { AppComponent } from './app.component';
@@ -14,16 +15,14 @@ import { AggregatorModule } from './components/aggregator/aggregator.module';
 import { BrokerModule } from './components/broker/broker.module';
 import { ControllerModule } from './components/controller/controller.module';
 import { CoordinatorModule } from './components/coordinator/coordinator.module';
-import { DeploymentModule } from './components/deployment/deployment.module';
 import { DeviceModule } from './components/device/device.module';
+import { DeploymentModule } from './components/deployment/deployment.module';
 import {SettingsModule} from './core/settings/settings.module';
 import { SensorModule } from './components/sensor/sensor.module';
 import { ControlCentreModule } from './features/control-centre/control-centre.module';
 import { HealthModule } from './features/health/health.module';
 import { ReportsModule} from './features/reports/reports.module';
 import {UserModule} from './core/user/user.module';
-import { UpdatesService} from './updates.service';
-import { SocketsService } from './sockets.service';
 
 @NgModule({
   declarations: [
@@ -42,6 +41,7 @@ import { SocketsService } from './sockets.service';
     ControllerModule,
     CoordinatorModule,
     ReportsModule,
+    DeviceModule,
     DashboardModule,
     ControlCentreModule,
     SettingsModule,
@@ -56,8 +56,7 @@ import { SocketsService } from './sockets.service';
       useClass: HttpInterceptorService,
       multi: true
     },
-    UpdatesService,
-    SocketsService
+    UpdatesService
   ],
   bootstrap: [AppComponent]
 })

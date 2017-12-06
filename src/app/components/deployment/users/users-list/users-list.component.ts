@@ -14,6 +14,7 @@ export class UsersListComponent implements OnInit {
   constructor(private _depServ: DeploymentService) { }
 
   ngOnInit() {
+    
     this._depServ.deploymentUsers(this.deployment)
     .subscribe(data => {
       this.users = data;
