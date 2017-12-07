@@ -2,16 +2,20 @@
   Add a new device
 </div>
 <div mat-dialog-content>
-
+  
+The following devices have been enrolled, but not configured<br/>
+1<br/>
+2<br/>
+<button mat-button>Add a different device</button>
+<br/>
+Select a known make/model<br/>
+Add a new make and model (make/model/compatibility)<br/>
+Set name, description, location, roles (partial OK)
     <pre>
 
-        has the device already been enrolled?
-        (no) make/model/compatibility
-        (yes) find/name/description/location
-        connect and confirm
-        roles
-        change tabs to accordion (for mobile)
+    
     </pre>
+    <app-enrolled-table></app-enrolled-table>
   <div fxLayout="row">
     <div flex="50">
       <mat-form-field>

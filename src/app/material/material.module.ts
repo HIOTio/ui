@@ -13,6 +13,7 @@ import {
   MatCardModule,
   MatDialogModule,
   MatSidenavModule,
+  MatStepperModule,
   MatMenuModule,
   MatSelectModule,
   MatSnackBarModule,
@@ -26,6 +27,7 @@ import {
   MatIconModule,
   MatSlideToggleModule,
   MatIconRegistry,
+  MatTableModule,
   MatProgressSpinnerModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -46,6 +48,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatSidenavModule,
     FlexLayoutModule,
+    MatStepperModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
@@ -63,6 +66,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatIconModule,
     MatSlideToggleModule,
+    MatTableModule,
     CdkTableModule,
     MatProgressSpinnerModule
   ],
@@ -86,6 +90,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatSelectModule,
     MatDialogModule,
+    MatStepperModule,
     MatSidenavModule,
     MatMenuModule,
     MatSnackBarModule,
@@ -97,6 +102,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatIconModule,
     MatSlideToggleModule,
+    MatTabsModule,
     CdkTableModule,
     MatProgressSpinnerModule
   ],
