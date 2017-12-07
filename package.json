@@ -17,7 +17,7 @@
     "@angular/common": "^4.4.6",
     "@angular/compiler": "^4.2.4",
     "@angular/core": "^4.2.4",
-    "@angular/flex-layout": "^2.0.0-beta.10",
+    "@angular/flex-layout": "^2.0.0-rc.1",
     "@angular/forms": "^4.2.4",
     "@angular/http": "^4.2.4",
     "@angular/material": "^2.0.0-beta.12",
@@ -33,7 +33,11 @@
     "hammerjs": "^2.0.8",
     "ng2-dragula": "^1.5.0",
     "queueing-subject": "^0.1.1",
+<<<<<<< HEAD
     "rxjs": "^5.5.2",
+=======
+    "rxjs": "^5.5.5",
+>>>>>>> master
     "rxjs-websockets": "^4.0.0",
     "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.14"
