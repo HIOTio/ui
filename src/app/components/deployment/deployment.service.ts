@@ -10,12 +10,24 @@ export class DeploymentService {
   constructor(private _http: HttpClient, private _profile: ProfileService) { }
 
   getDeployments(): Observable<any> {
-    return this._http.get('http://localhost:3000/api/deployment_role/profile/' + this._profile.getUserId());
+    return this._http.get('http://54.37.228.181/be/api/deployment_role/profile/' + this._profile.getUserId());
   }
   deploymentDetails(deploymentId): Observable<any> {
-    return this._http.get('http://localhost:3000/api/deployment/' + deploymentId);
+    return this._http.get('http://54.37.228.181/be/api/deployment/' + deploymentId);
   }
   deploymentUsers(deploymentId): Observable<any> {
-    return this._http.get('http://localhost:3000/api/deployment_role/deployment/' + deploymentId);
+    return this._http.get('http://54.37.228.181/be/api/deployment_role/deployment/' + deploymentId);
+  }
+  deploymentTypes(): Observable<any> {
+    return this._http.get('http://54.37.228.181/be/api/deployment_type');
+  }
+  addDeployment(deployment): Observable<any> {
+    return this._http.post('http://54.37.228.181/be/api/deployment', deployment );
+  }
+  updateDeployment(deployment): Observable<any> {
+    return this._http.put('http://54.37.228.181/be/api/deployment', deployment );
+  }
+  addDeploymentUser(deploymentUser): Observable<any> {
+    return this._http.post('http://54.37.228.181/be/api/deployment_user', deploymentUser);
   }
 }

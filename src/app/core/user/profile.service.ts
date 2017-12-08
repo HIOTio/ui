@@ -22,7 +22,7 @@ export class ProfileService {
   }
   setUser(id) {
     this.id = id;
-    this._http.get('http://localhost:3000/api/profile/' + id)
+    this._http.get('http://54.37.228.181/be/api/profile/' + id)
     .subscribe(data => {
       this.user.next(data);
     });

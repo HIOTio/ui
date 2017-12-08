@@ -8,7 +8,7 @@ export class DeviceService {
   constructor(private _http: HttpClient) {
   }
   getDevices(): Observable<any> {
-    return this._http.get('http://localhost:3000/api/device/deployment/' + this.deployment);
+    return this._http.get('http://54.37.228.181/be/api/device/deployment/' + this.deployment);
   }
   resetDeployment(deployment: string): void {
     this.deployment = deployment;

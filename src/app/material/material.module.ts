@@ -20,6 +20,7 @@ import {
   MatExpansionModule,
   MatTabsModule,
   MatSliderModule,
+  MatListModule,
   MatNativeDateModule,
   MatDatepickerModule,
   MatInputModule,
@@ -27,10 +28,7 @@ import {
   MatIconModule,
   MatSlideToggleModule,
   MatIconRegistry,
-<<<<<<< HEAD
-=======
   MatTableModule,
->>>>>>> master
   MatProgressSpinnerModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -56,6 +54,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCheckboxModule,
     MatToolbarModule,
     MatCardModule,
+    MatListModule,
     MatDialogModule,
     MatNativeDateModule,
     MatSelectModule,
@@ -69,10 +68,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatIconModule,
     MatSlideToggleModule,
-<<<<<<< HEAD
-=======
     MatTableModule,
->>>>>>> master
     CdkTableModule,
     MatProgressSpinnerModule
   ],
@@ -97,6 +93,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSelectModule,
     MatDialogModule,
     MatStepperModule,
+    MatListModule,
     MatSidenavModule,
     MatMenuModule,
     MatSnackBarModule,
@@ -108,11 +105,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatIconModule,
     MatSlideToggleModule,
-<<<<<<< HEAD
-=======
     MatTabsModule,
->>>>>>> master
     CdkTableModule,
+    MatTableModule,
     MatProgressSpinnerModule
   ],
   providers: [MatIconRegistry]

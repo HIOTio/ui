@@ -1,3 +1,21 @@
+
 <p>
-  deployment-create works!
-</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="deployment.name" placeholder="Deployment name">
+      </mat-form-field>
+    </p>
+<p>    
+      <mat-form-field>
+      <input matInput [(ngModel)]="deployment.description" placeholder="deployment description">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+              <mat-select placeholder="Deployment type" [(ngModel)]="deployment.deploymentType">
+                <mat-option *ngFor="let type of types" [value]="type._id">
+                  {{ type.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>
+            <button mat-button (click)="updateDeployment()">Create</button>

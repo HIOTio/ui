@@ -1,5 +1,5 @@
-<pre>stick in a table with filters by type, roles, make, model, location and status, search by id, name </pre>
-<div *ngFor="let device of devices">
-  {{ device.name}}
-</div>
+
+<mat-list>
+    <mat-list-item *ngFor="let device of devices">{{ device.name}}</mat-list-item>
+</mat-list>
 <app-device-add [deployment]="deploymentId"></app-device-add>

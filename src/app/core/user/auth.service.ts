@@ -35,7 +35,7 @@ subscriptions=[];
     this._deployments.getDeployments()
     .subscribe(data => {
       data.forEach(channel => {
-        this._updatesService.connect('ws://localhost:3000/deployment_' + channel.deployment._id);
+        this._updatesService.connect('ws://54.37.228.181/be/deployment_' + channel.deployment._id);
       });
     });
   }
@@ -54,7 +54,7 @@ subscriptions=[];
       route = '/';
     }
     route.replace('\\', '/');
-      this.http.post('http://localhost:3000/auth', {username: username, password: password})
+      this.http.post('http://54.37.228.181/be/auth', {username: username, password: password})
       .map(res => res.json())
       .subscribe(
         data => {

@@ -1,7 +1,13 @@
 <mat-spinner *ngIf="!details"></mat-spinner>
-<mat-card *ngIf="details">
+<div *ngIf="details">
+    <div *ngIf="edit">
+<app-deployment-edit [deployment]="details"></app-deployment-edit>
+<button mat-button color="accent" (click)="edit=false">Cancel</button>
+
+    </div>
+<mat-card *ngIf="!edit">
   <mat-card-title>
-      {{details.name}}
+      {{details.name}} <mat-icon (click)="edit=true">mode_edit</mat-icon>
   </mat-card-title>
     <mat-card-subtitle>
      {{details.description}}
@@ -10,7 +16,7 @@
         <mat-tab-group [(selectedIndex)]="selectedTabIndex">
             <mat-tab label="Summary">
 
-                    <app-deployment-edit></app-deployment-edit>
+                    
             </mat-tab>
             <mat-tab label="Users">
 
@@ -39,3 +45,4 @@
 
 </mat-card>
 
+</div>

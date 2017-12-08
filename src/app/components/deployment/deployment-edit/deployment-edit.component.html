@@ -1,1 +1,17 @@
-<button mat-raised-button color="primary">Edit this deployment</button>
+
+
+  <mat-form-field>
+<input matInput [(ngModel)]="deployment.name">
+</mat-form-field>
+
+<mat-form-field>
+<input matInput [(ngModel)]="deployment.description">
+</mat-form-field>
+<mat-form-field>
+        <mat-select placeholder="Deployment type" [(ngModel)]="deployment.deploymentType">
+          <mat-option *ngFor="let type of types" [value]="type._id">
+            {{ type.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-button (click)="updateDeployment()">Update</button>

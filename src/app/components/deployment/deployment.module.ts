@@ -27,8 +27,8 @@ import { RealTimeComponent } from './real-time/real-time.component';
     LocationModule,
     RouterModule.forChild([
       {path: 'deployment', component: DeploymentListComponent, data: {state: 'deployment'},canActivate:[AuthGuardService]},
+      {path: 'deployment/create', component: DeploymentCreateComponent, data: {state: 'deployment'},canActivate:[AuthGuardService]},
       {path: 'deployment/:id', component: DeploymentDetailsComponent, data: {state: 'deployment'},canActivate:[AuthGuardService]}
-      
     ]
     )
   ],
