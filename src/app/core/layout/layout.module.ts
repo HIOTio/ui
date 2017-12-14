@@ -5,6 +5,7 @@ import { MaterialModule } from '../../material/material.module';
 import { UserModule } from '../user/user.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import {UserMenuService} from './user-menu.service';
+import { CollapseModule } from 'ngx-bootstrap';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import {UserMenuService} from './user-menu.service';
     CommonModule,
     MaterialModule,
     RouterModule,
-    UserModule
+    UserModule,
+    CollapseModule.forRoot()
   ],
   declarations: [MainMenuComponent],
   exports: [MainMenuComponent],

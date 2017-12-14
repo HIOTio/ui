@@ -1,14 +1,249 @@
-  <div fxLayoutWrap class='container' [dragula]='"first-bag"'>
-    <app-deployment-home-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">
 
-    </app-deployment-home-card>
-    <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Notifications</mat-card>
-    <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Data Trends (depends on deployment type)</mat-card>
-    <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Health Warnings</mat-card>
-    <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Something else</mat-card>
-    <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Offline Devices</mat-card>
-    <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Simple card</mat-card>
-    <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Simple card</mat-card>
-    <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Simple card</mat-card>
+
+
+
+
+<carousel>
+  <slide>
+    First Slide
+    <div class="carousel-caption d-none d-md-block">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </slide>
+  <slide>
+    Second Slide
+  </slide>
+  <slide>
+    Third Slide
+  </slide>
+</carousel>
+
+<div id="whatishiot" class="container-fluid">
+<div class="row">
+<div class="col-sm-4">
+<h2>Stacked IOT</h2>
+<h4>Infinite Scalability</h4> 
+<p>Reduced Traffic</p>
+<p>Smaller Attack Surface</p>
+<p>Open Integration Protocols</p>
+<p>Distributed data processing and aggregation</p>
+<p>And so much more...</p>
+<button class="btn btn-default btn-lg" routerLink="/features">Features in detail...</button>
+</div>
+    <div class="col-sm-8">
+        <span class="glyphicon glyphicon-signal logo"></span>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+<div class="col-sm-4">
+  <span class="glyphicon glyphicon-globe logo"></span> 
+</div>
+      <div class="col-sm-8">
+<h2>One Single, Open Ecosystem</h2>
+<h4>From Sensor to User</h4> 
+<p>Every aspect of HIOT is open source.</p>
+<p>Roles based architecture, allowing you to distribute functionality and remove bottlenecks</p>
+      </div>
+</div>
+
+</div>
+
+<div id="overview" class="container-fluid text-center">
+<h2>OVERVIEW</h2>
+<h4>Why is HIOT different?</h4>
+<br>
+<div class="row">
+<div class="col-sm-4">
+  <span class="glyphicon glyphicon-off logo-small"></span>
+  <h4>CONTROL YOUR ENVIRONMENT</h4>
+  <p>We have a number of preconfigured scripts &amp; schematics to interface HIOT with real-world devices. Using simple, readily available components (like the $5 ESP8266 family of micro-controllers) you can quickly and easily start controlling HVAC, lighting, irrigation systems and so much more.</p>
+</div>
+<div class="col-sm-4">
+  <span class="glyphicon glyphicon-fire logo-small"></span>
+  <h4>REAL TIME RESPONSES TO REAL WORLD EVENTS</h4>
+  <p>With our <b>physical exception handling</b>, we can not only inform you of problems and emergencies, but also act upon them on your behalf.</p>
+</div>
+<div class="col-sm-4">
+  <span class="glyphicon glyphicon-lock logo-small"></span>
+  <h4>SECURITY FROM THE 'THING' UP</h4>
+  <p>Because the Things in IOT don't run a full Operating System, but instead have a single, fixed API, the attack surface of your IOT deployment is greatly reduced. Being Open Source, every line of code is open to the scrutiny of the community.
+    </p>
+</div>
+</div>
+<br><br>
+<div class="row">
+<div class="col-sm-4">
+  <span class="glyphicon glyphicon-leaf logo-small"></span>
+  <h4>IT'S ALL ABOUT THE ENVIRONMENT</h4>
+  <p>Everything within your environment is auditable and controllable through HIOT. We're not just about switching lights off when a room is empty, instead, we can monitor and control just about everything. No matter where you're deploying HIOT, the sky isn't even the limit</p>
+</div>
+      <div class="col-sm-4">
+  <span class="glyphicon glyphicon-wrench logo-small"></span>
+  <h4>WE'VE ALREADY DONE THE HARD WORK...</h4>
+  <p>... and we'll keep doing it. If you have a particular usage or strategy in mind for HIOT, let us know. We'd love to help you get the most out of it.</p>
+</div>
+<div class="col-sm-4">
+  <span class="glyphicon glyphicon-hourglass logo-small"></span>
+  <h4>WHY WAIT</h4>
+  <p>Have a look around and feel free to <a routerLink="/contactus">get in touch</a> if you need some assistance</p>
+</div>
+
+</div>
+</div>
+<div id="features" class="container-fluid text-center">
+<h2>FEATURES</h2>
+<h4>How is HIOT different?</h4>
+<br>
+<div class="row">
+<div class="col-sm-4">
+  <span><i class="fa fa-cogs fa-large" aria-hidden="true"></i></span>
+  <h4>SIMPLIFIED CONFIGURATION</h4>
+  <p>HIOT uses JSON based control manifests to describe the functionality and configuration of each device. Once a device is added to a deployment it can be reconfigured from the platform at any time and from anywhere.<br/>
+      We also have an Auto-discovery function built into each device so you can find and configure new devices at the click of a button<br/>
+      The JSON manifests &amp; Auto-discovery functionality can be used to integrate new devices directly into your HIOT deployment, offering true plug-and-play capabilities.
+    </p>
+</div>
+<div class="col-sm-4">
+  <span><i class="fa fa-arrow-up fa-large" aria-hidden="true"></i></span>
+  <h4>LIMITLESS SCALABILITY</h4>
+   <p> HIOT implements multiple levels of distributed aggregation and control, allowing you to grow truly massive deployments.<br/>
+    Larger IOT deployments can "stack" Aggregators and brokers to minimise the number of messages and aggregation effort on the platform</p>
+</div>
+<div class="col-sm-4">
+  <span><i class="fa fa-plug fa-large" aria-hidden="true"></i></span>
+  <h4>INDEPENDENT AND INTEGRATED</h4>
+  <p>As a "know-nothing" architecture, any compatible device or solution can be effortlessly integrated into HIOT, resulting in greatly reduced complexity and simplified integration and interoperability. Simply add a new device to your local network and run auto-discovery from any coordinator. The device can then be configured as part of your IOT deployment from any client app.
+    </p>
+</div>
+</div>
+<br><br>
+<div class="row">
+<div class="col-sm-4">
+  <span><i class="fa fa-object-group fa-large" aria-hidden="true"></i></span>
+  <h4>ROLE BASED ARCHITECTURE</h4>
+  <p>A set of distinct roles (e.g. Aggregators and Brokers) can be distributed across all devices. By providing you with real-time data on the performance of each device in your deployment, HIOT can help you ensure that not only does everything work, but that it works as efficiently as possible. We cover this in A LOT more detail in the Architecture section.
+    </p>
+</div>
+      <div class="col-sm-8">
+          <div class="row">
+          <div class="col-sm-3">
+              <i class="fa fa-check fa-huge text-right" aria-hidden="true"></i>
+              </div>
+              <div class="col-sm-9">
+                  <ul class="text-left">
+                      <li>HIOT Works.
+                    <li>HIOT Scales.
+                        <li>HIOT Integrates
+                            
+                  </ul>
+              </div>
+          </div>
+</div>
+<div class="col-sm-4">
+  <span></span>
+  <h4></h4>
+  <p></p>
+</div>
+
+</div>
+</div>
+<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+
+
+<div id="components" class="container-fluid text-center bg-grey">
+<h2>COMPONENTS</h2>
+<h4>WHAT PUTS THE 'H' IN HIOT</h4>
+<div class="row text-center">
+<div class="col-sm-4">
+  <div class="thumbnail">
+    <i class="fa fa-thermometer-empty fa-large" aria-hidden="true"></i><i class="fa fa-play fa-large" aria-hidden="true"></i>
+    <p><strong>Sensors And Controllers</strong></p>
+    <p>It might seem obvious, but it's important to differentiate between the real-world sensor and the IOT "Thing" that receives data from it. Similarly, a controller (e.g. for your office HVAC system isn't part of the Thing that integrates with it.</p>
+    <p>In HIOT, the sensor and controller are part of the real-world environment, we use them to learn about and alter our environment and as long as we can get real-world data and make real-world changes we don't really care that much about them. This will make more sense later...</p>
   </div>
+</div>
+<div class="col-sm-4">
+  <div class="thumbnail">
+    <i class="fa fa-microchip fa-large" aria-hidden="true"></i>
+    <p><strong>Things</strong></p>
+    <p>In HIOT, the Thing is the edge of the deployment. A Thing can connect to any number of Sensors and is only limited by its physical interfaces (e.g. GPIO pins.)</p>
+      <p>We like to keep our Things as simple as possible. While a lot of IOT SDK etc. focus on devices like Intel&reg; NUC and Raspberry Pi&reg; devices capable of running a 'full' operating system, we like to use much simpler devices for 2 reasons, 1) they're a fraction of the cost (useful if you're deploying thousands of Things) and, 2) they have a much smaller attack surface as they typically need to be physically connected to a boot-loader in order to update their code. </p>
+          <p>We're developed a full &amp; free (in every sense of the word) API implementation for devices like the Arduino Uno and the WiFi enabled ESP8266-based Wemos D1 and D1 mini. We also have NodeJS and Java implementations for more demanding Things.</p>
+  </div>
+</div>
+<div class="col-sm-4">
+  <div class="thumbnail">
+    <i class="fa fa-list-ol fa-large" aria-hidden="true"></i>
+    <p><strong>Aggregators</strong></p>
+      <p>Aggregators are one of the truly unique concepts within HIOT. </p><p>Aggregators can be deployed anywhere in your HIOT ecosystem and are used to collate and aggregate data from things and pass them upstream towards the platform. Aggregators can be chained, or stacked, so that you can distribute the data processing workload across the ecosystem as your HIOT deployment grows.</p>
+      <p>There are some examples in the architecture section of the site that will provide more details on distributed aggregation.
+      </p>
+  </div>
+</div>
+    <div class="row text-center">
+<div class="col-sm-4">
+  <div class="thumbnail">
+    <i class="fa fa-handshake-o fa-large" aria-hidden="true"></i>
+    <p><strong>Brokers</strong></p>
+      <p>Whereas Aggregators collect and aggregate data from Things and pass them up to the Platform, Brokers are responsible for receiving commands from the Platform and passing them on to the relevant Things, Aggregators or other Brokers. Like Aggregators, Brokers can be chained together enabling massive scalability by decomposing the HIOT deployment into smaller functional units</p>
+  </div>
+</div>
+ <div class="col-sm-4">
+  <div class="thumbnail">
+   <i class="fa fa-object-group fa-large" aria-hidden="true"></i>
+    <p><strong>Coordinator</strong></p>
+    <p>Typically, there will be one Coordinator per physical location (apart from any redundant devices that might be used in the event of a failure). A coordinator manages every HIOT device in the location and is the only device in the location with access to the outside world. There is no hard limit to the number of devices which can be managed by a single coordinator. The Architecture section has some details on the factors which could impact (positively or negatively) the performance of the Coordinator.
+      </p>
+  </div>
+</div>
+<div class="col-sm-4">
+  <div class="thumbnail">
+   <i class="fa fa-cloud fa-large" aria-hidden="true"></i>
+    <p><strong>Platform</strong></p>
+    <p>This is where the magic happens!
+       </p>
+      <p>The Platform has everything you would expect; Dashboards, device configuration and monitoring tools, Controller interfaces, Analytics and Business Intelligence etc. In time, we're going to set up a demo platform to showcase some of the features you can expect from HIOT.
+      </p>
+      <p>We have a number of implementations for you to choose from depending on your particular needs - from small Vagrant boxes and simple NodeJS implementations, to production-ready OpenStack deployment scripts and a whole lot in between</p>
+      <p>As with all the other components in HIOT, the key aspect of the Platform is the API (or in this case, APIs) - these are fully documented and available in our Wiki.</p>
+  </div>
+</div>
+<div class="col-sm-4">
+  <div class="thumbnail">
+    <i class="fa fa-mobile fa-large" aria-hidden="true"></i>
+    <p><strong>Client Apps</strong></p>
+    <p>
+      </p>
+  </div>
+</div>
+</div>
 
+<div id="contactus" class="container-fluid bg-grey">
+<h2 class="text-center">CONTACT US</h2>
+<div class="row">
+<div class="col-sm-5">
+  <p>Want to Chat? Just fill in your details and we'll get back to you.</p>
+
+</div>
+<div class="col-sm-7">
+  <div class="row">
+    <div class="col-sm-6 form-group">
+      <input class="form-control" [(ngModel)]="contact.name" id="name" name="name" placeholder="Name" type="text" required>
+    </div>
+    <div class="col-sm-6 form-group">
+      <input class="form-control" id="email" [(ngModel)]="contact.email" name="email" placeholder="Email" type="email" required>
+    </div>
+  </div>
+  <textarea class="form-control" id="comment" [(ngModel)]="contact.comment" name="comment" placeholder="Comment" rows="5"></textarea><br>
+  <div class="row">
+    <div class="col-sm-12 form-group">
+      <button class="btn btn-default pull-right"  (click)="sendMail()">Send</button>
+    </div>
+  </div> 
+</div>
+</div>
+</div>

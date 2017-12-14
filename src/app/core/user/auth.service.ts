@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs/Rx';
 import { DeploymentService } from '../../components/deployment/deployment.service';
 import { UpdatesService } from '../../updates.service';
 import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
@@ -9,11 +10,11 @@ import { Http } from '@angular/http';
 import {ProfileService } from './profile.service';
 @Injectable()
 export class AuthService {
-subscriptions=[];
-  authStatus= {
+subscriptions= [];
+  authStatus = new BehaviorSubject({
     loggedIn: false,
     errorMsg: ''
-  };
+  });
   constructor(public jwtHelper: JwtHelper,
     private http: Http,
     private _router: Router,
@@ -22,10 +23,16 @@ subscriptions=[];
     private _updatesService: UpdatesService
   ) {
     const token = localStorage.getItem('token');
-    this.authStatus.loggedIn = false;
+    this.authStatus.next({
+      loggedIn: false,
+      errorMsg: ''
+    });
     if ( token ) {
       if ( !this.jwtHelper.isTokenExpired(token)) {
-        this.authStatus.loggedIn = true;
+        this.authStatus.next({
+          loggedIn: true,
+          errorMsg: ''
+        });
         this.getUserDetails (token);
         this.subscribeToChannels();
       }
@@ -43,7 +50,7 @@ subscriptions=[];
     this._profile.setUser(this.jwtHelper.decodeToken(token).id);
 
   }
-  public isAuthenticated() {
+  public isAuthenticated(): Observable<any> {
     return this.authStatus;
   }
   public getToken(): string {
@@ -61,25 +68,33 @@ subscriptions=[];
           localStorage.setItem('token', data.token);
           if (data.success) {
             console.log(data);
-            this.authStatus.loggedIn = true;
-            this.authStatus.errorMsg = '';
+
+            this.authStatus.next({
+              loggedIn: true,
+              errorMsg:  ''
+            });
             this._router.navigate([route]);
             this.getUserDetails(data.token);
           }
           return this.authStatus;
         },
         error => {
-          this.authStatus.loggedIn = false;
-          this.authStatus.errorMsg = 'Invalid user or password';
+          this.authStatus.next({
+            loggedIn: false,
+            errorMsg: 'Invalid user or password'
+          });
           return this.authStatus;
         }
       );
   }
   logout() {
-    this.authStatus.loggedIn = false;
+    this.authStatus.next({
+      loggedIn: false,
+      errorMsg: ''
+    })
     localStorage.removeItem('token');
   }
   userStatus() {
-    return this.authStatus.loggedIn;
+    return this.authStatus;
   }
 }

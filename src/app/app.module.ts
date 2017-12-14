@@ -23,6 +23,9 @@ import { ControlCentreModule } from './features/control-centre/control-centre.mo
 import { HealthModule } from './features/health/health.module';
 import { ReportsModule} from './features/reports/reports.module';
 import {UserModule} from './core/user/user.module';
+import { CarouselModule } from 'ngx-bootstrap';
+
+import { NotificationComponent } from './core/user/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,7 @@ import {UserModule} from './core/user/user.module';
     ControlCentreModule,
     SettingsModule,
     HealthModule,
+    CarouselModule.forRoot(),
     RouterModule.forRoot([
       { path : '', component: HomeComponent}
     ])

@@ -1,18 +1,18 @@
-<div *ngIf="authenticated.loggedIn">
-    <app-notification ></app-notification>
 
-    <button mat-button  [matMenuTriggerFor]="menu">
-
-        <!-- TODO: Replace this icon with an image, eventually -->
-        <mat-icon>face</mat-icon>     
+&nbsp;
+<div class="btn-group" dropdown *ngIf="authenticated.loggedIn">
+  <button dropdownToggle type="button" class="btn btn-outline-success my-2 my-sm-0 dropdown-toggle">
+    <!-- <mat-icon>face</mat-icon>     -->
             {{user.firstname}}
-    </button>
-<mat-menu #menu="matMenu" [overlapTrigger]="false">
-    <button mat-menu-item routerLink='/profile' routerLinkActive='active'>My Profile</button>
-    <button mat-menu-item routerLink='/settings' routerLinkActive='active'>Settings</button>
-    <button mat-menu-item routerLink='/logout' routerLinkActive='active'>Log out</button>
-</mat-menu>
-    </div>
+  </button>
+  <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+    <li role="menuitem"><a class="dropdown-item"  routerLink='/profile' routerLinkActive='active'>My Profile</a></li>
+    <li role="menuitem"><a class="dropdown-item"  routerLink='/settings' routerLinkActive='active'>Settings</a></li>
+    <li class="divider dropdown-divider"></li>
+    <li role="menuitem"><a class="dropdown-item" routerLink='/logout' routerLinkActive='active'>Log out</a>
+    </li>
+  </ul>
+</div>
 <div  *ngIf="!authenticated.loggedIn">
-    <button mat-button routerLink='/login'>Login/Register</button>
+    <button class="nav-link" routerLink='/login'>Login/Register</button>
 </div>

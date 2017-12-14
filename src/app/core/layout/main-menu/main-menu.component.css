@@ -4,3 +4,7 @@
 .fill-space{
     flex: 1 1 auto;
 }
+.toolbar {
+    position: fixed;
+    top: 0
+  }

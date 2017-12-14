@@ -16,11 +16,13 @@ import { LogoutComponent } from './logout/logout.component';
 import { RouterModule} from '@angular/router';
 import {MaterialModule } from '../../material/material.module';
 import { LoginMenuComponent } from './login-menu/login-menu.component';
+import { BsDropdownModule} from 'ngx-bootstrap';
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     HttpModule,
+    BsDropdownModule.forRoot(),
     RouterModule.forChild([
       { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService], data: {state: 'profile'}},
       { path: 'login', component: LoginRegisterComponent, data: {state: 'login'}},

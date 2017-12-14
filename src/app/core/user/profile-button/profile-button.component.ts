@@ -7,7 +7,9 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./profile-button.component.css']
 })
 export class ProfileButtonComponent implements OnInit {
-  authenticated= {};
+  authenticated= {
+    loggedIn : false
+  };
   user= {
     firstname: null,
     lastname: null
@@ -16,7 +18,9 @@ export class ProfileButtonComponent implements OnInit {
 
   ngOnInit() {
     this.profileService.getUser().subscribe(data => this.user = data);
-    this.authenticated = this._auth.isAuthenticated();
+    this._auth.isAuthenticated().subscribe(
+      data => this.authenticated.loggedIn = data.loggedIn
+    );
   }
 
 }
