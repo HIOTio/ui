@@ -1,11 +1,28 @@
-<input placeholder="First Name" [(ngModel)]="user.firstname" required>
+<div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="">First and last name</span>
+    </div>
+    <input placeholder="First Name" class="form-control" [(ngModel)]="user.firstname" required>
+    <input placeholder="Last Name" class="form-control" [(ngModel)]="user.lastname" required>
+</div>
 
-<input placeholder="Last Name" [(ngModel)]="user.lastname" required>
+<div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="">Email</span>
+    </div>
+    <input placeholder="Email Address" class="form-control" [(ngModel)]="user.email" required>
+</div>
 
-<input placeholder="Email Address" [(ngModel)]="user.email" required>
 
-<input placeholder="password" [(ngModel)]="user.password" type="password">
+<div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="">Update Password</span><input type="checkbox" aria-label="Change passowrd" [(ngModel)]="updatePass">
+    </div>
+    <input placeholder="password" class="form-control" [(ngModel)]="user.password" type="password" *ngIf="updatePass">
+    <input placeholder="confirm password" class="form-control" [(ngModel)]="user.passwordConfirm" type="password" *ngIf="updatePass">
+</div>
 
-<input placeholder="confirm password" [(ngModel)]="user.passwordConfirm" type="password">
 
-<input placeholder="Organisation" [(ngModel)]="user.Organisation">
+
+
+<input placeholder="Organisation" class="form-control" [(ngModel)]="user.Organisation">

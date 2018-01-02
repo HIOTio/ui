@@ -7,12 +7,12 @@ import { ProfileService } from '../profile.service';
 })
 export class ProfileComponent implements OnInit {
   user = [];
+  updatePass = false;
   constructor(private _ps: ProfileService) { }
 
   ngOnInit() {
     this._ps.getUser().subscribe(data => {
       this.user = data;
-      console.log(data);
     });
   }
 

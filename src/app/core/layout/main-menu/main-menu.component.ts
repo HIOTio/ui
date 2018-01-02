@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./main-menu.component.css']
 })
 export class MainMenuComponent implements OnInit {
-  isCollapsed: boolean = true;
+  isCollapsed = true;
   menuItems = [];
   staticMenu = [
     {
@@ -25,7 +25,11 @@ export class MainMenuComponent implements OnInit {
       title: 'Overview'
     },
     {
-      link: '#contact',
+      link: '#components',
+      title: 'Components'
+    },
+    {
+      link: '#contactus',
       title: 'Contact us'
     },
   ];

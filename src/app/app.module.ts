@@ -26,6 +26,13 @@ import { UserModule } from './core/user/user.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { environment } from '../environments/environment';
 import { NotificationComponent } from './core/user/notification/notification.component';
+import { InViewportModule, WindowRef } from '@thisissoon/angular-inviewport';
+import { ScrollSpyModule } from '@thisissoon/angular-scrollspy';
+
+// Provide window object for browser and a suitable replacement
+// on other platforms
+const getWindow = () => window;
+
 
 @NgModule({
   declarations: [
@@ -33,6 +40,8 @@ import { NotificationComponent } from './core/user/notification/notification.com
     HomeComponent
   ],
   imports: [
+    InViewportModule.forRoot(),
+    ScrollSpyModule.forRoot(),
     BrowserModule,
     MaterialModule,
     DragulaModule,
@@ -59,6 +68,9 @@ import { NotificationComponent } from './core/user/notification/notification.com
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
       multi: true
+    },
+    {
+      provide: WindowRef, useFactory: (getWindow)
     },
     UpdatesService,
   ],

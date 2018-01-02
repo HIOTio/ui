@@ -11,9 +11,9 @@
                 <a class="nav-link" routerLink='{{item.link}}'>{{item.title}} <span class="sr-only">(current)</span></a>
             </li>
         </ul>
-        <ul *ngIf="menuItems.length<1" class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul *ngIf="menuItems.length<1" class="navbar-nav mr-auto mt-2 mt-lg-0" snScrollSpy>
             <li *ngFor="let item of staticMenu" class="nav-item">
-                <a class="nav-link" href='{{item.link}}'>{{item.title}} <span class="sr-only">(current)</span></a>
+                <a class="nav-link" snScrollSpyItem href='{{item.link}}'>{{item.title}} <span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <!--<form class="form-inline my-2 my-lg-0">
