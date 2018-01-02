@@ -1,24 +1,27 @@
+<mat-spinner *ngIf="loading">
+</mat-spinner>
+<hiot-main-menu></hiot-main-menu>
+<div class="v_filler"></div>
+<div [@routerAnimation]="getRouteAnimation(route)">
+    <router-outlet class="main-view" #route="outlet"></router-outlet>
 
-    <mat-spinner *ngIf="loading"></mat-spinner>
-      <hiot-main-menu></hiot-main-menu>
-      <div class="v_filler"></div>
-    <div [@routerAnimation]="getRouteAnimation(route)"><router-outlet class="main-view" #route="outlet"></router-outlet></div>
+    <div style="height:50px"></div>
 
     <nav class="navbar fixed-bottom navbar-expand navbar-light bg-light">
-  <div class="navbar-text m-auto">
-    Stick current deployment etc. in here - as well as any critical alerts
-  </div>
-  <ul class="navbar-nav">
-      
-   <!-- <app-notification ></app-notification> -->
-  <li class="nav-item">
-    <a class="nav-link" href="https://medium.com/@healy.mark.a"><i class="fa fa-medium" aria-hidden="true"></i></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="https://steemit.com/@hiot"><i class="fa fa-steemit" aria-hidden="true"></i></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/HIOTio/"><i class="fa fa-github" aria-hidden="true"></i></a>
-  </li>
-</ul>
-</nav>
+        <div class="navbar-text m-auto">
+            HIOT 2016 - 2018
+        </div>
+        <ul class="navbar-nav">
+
+            <!-- <app-notification ></app-notification> -->
+            <li class="nav-item">
+                <a class="nav-link" href="https://medium.com/@healy.mark.a" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://steemit.com/@hiot" target="_blank">Steemit</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/HIOTio/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </nav>

@@ -3,14 +3,15 @@ import { DeploymentService } from '../../components/deployment/deployment.servic
 import { UpdatesService } from '../../updates.service';
 import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 import { Injectable } from '@angular/core';
-import { Observable} from 'rxjs/Observable';
-import { Router} from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 import { JwtHelper } from 'angular2-jwt';
 import { Http } from '@angular/http';
-import {ProfileService } from './profile.service';
+import { ProfileService } from './profile.service';
+import { environment } from '../../../environments/environment';
 @Injectable()
 export class AuthService {
-subscriptions= [];
+  subscriptions = [];
   authStatus = new BehaviorSubject({
     loggedIn: false,
     errorMsg: ''
@@ -27,26 +28,26 @@ subscriptions= [];
       loggedIn: false,
       errorMsg: ''
     });
-    if ( token ) {
-      if ( !this.jwtHelper.isTokenExpired(token)) {
+    if (token) {
+      if (!this.jwtHelper.isTokenExpired(token)) {
         this.authStatus.next({
           loggedIn: true,
           errorMsg: ''
         });
-        this.getUserDetails (token);
+        this.getUserDetails(token);
         this.subscribeToChannels();
       }
     }
   }
   private subscribeToChannels() {
     this._deployments.getDeployments()
-    .subscribe(data => {
-      data.forEach(channel => {
-        this._updatesService.connect('ws://54.37.228.181/be/deployment_' + channel.deployment._id);
+      .subscribe(data => {
+        data.forEach(channel => {
+          this._updatesService.connect('ws://54.37.228.181/be/deployment_' + channel.deployment._id);
+        });
       });
-    });
   }
-  private getUserDetails(token){
+  private getUserDetails(token) {
     this._profile.setUser(this.jwtHelper.decodeToken(token).id);
 
   }
@@ -61,30 +62,30 @@ subscriptions= [];
       route = '/';
     }
     route.replace('\\', '/');
-      this.http.post('http://54.37.228.181/be/auth', {username: username, password: password})
+    this.http.post(environment.services + '/auth', { username: username, password: password })
       .map(res => res.json())
       .subscribe(
-        data => {
-          localStorage.setItem('token', data.token);
-          if (data.success) {
-            console.log(data);
+      data => {
+        localStorage.setItem('token', data.token);
+        if (data.success) {
+          console.log(data);
 
-            this.authStatus.next({
-              loggedIn: true,
-              errorMsg:  ''
-            });
-            this._router.navigate([route]);
-            this.getUserDetails(data.token);
-          }
-          return this.authStatus;
-        },
-        error => {
           this.authStatus.next({
-            loggedIn: false,
-            errorMsg: 'Invalid user or password'
+            loggedIn: true,
+            errorMsg: ''
           });
-          return this.authStatus;
+          this._router.navigate([route]);
+          this.getUserDetails(data.token);
         }
+        return this.authStatus;
+      },
+      error => {
+        this.authStatus.next({
+          loggedIn: false,
+          errorMsg: 'Invalid user or password'
+        });
+        return this.authStatus;
+      }
       );
   }
   logout() {

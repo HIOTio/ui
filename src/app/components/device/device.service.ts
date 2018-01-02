@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 @Injectable()
 export class DeviceService {
   public device: Observable<any>;
@@ -8,12 +9,12 @@ export class DeviceService {
   constructor(private _http: HttpClient) {
   }
   getDevices(): Observable<any> {
-    return this._http.get('http://54.37.228.181/be/api/device/deployment/' + this.deployment);
+    return this._http.get(environment.services + '/api/device/deployment/' + this.deployment);
   }
   resetDeployment(deployment: string): void {
     this.deployment = deployment;
   }
-  newDevice(){
+  newDevice() {
     return this.device;
   }
 }
