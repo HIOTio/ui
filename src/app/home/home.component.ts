@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { slideInOutAnimation } from '../core/animations/anim';
 import { Http } from '@angular/http';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
       this.errMsg = 'Please fill out all the fields so we can address your query properly';
     } else {
       // sort this out later
-      this._http.post('https://hiot.io/be/contact/', this.contact)
+      this._http.post(environment.services + '/contact/', this.contact)
         .subscribe(
         resp => { this.okMsg = 'Thanks for reaching out, we\'ll be in touch shortly'; },
         err => {

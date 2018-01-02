@@ -22,7 +22,7 @@ export class ProfileService {
   }
   setUser(id) {
     this.id = id;
-    this._http.get(environment.services + 'api/profile/' + id)
+    this._http.get(environment.services + '/api/profile/' + id)
       .subscribe(data => {
         this.user.next(data);
       });
