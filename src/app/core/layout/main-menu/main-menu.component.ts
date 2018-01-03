@@ -13,16 +13,16 @@ export class MainMenuComponent implements OnInit {
   menuItems = [];
   staticMenu = [
     {
+      link: '#overview',
+      title: 'Overview'
+    },
+    {
       link: '#benefits',
       title: 'Benefits'
     },
     {
       link: '#features',
       title: 'Features'
-    },
-    {
-      link: '#overview',
-      title: 'Overview'
     },
     {
       link: '#components',
@@ -45,7 +45,6 @@ export class MainMenuComponent implements OnInit {
     this._auth.isAuthenticated()
       .subscribe(data => {
         this.menuItems = this.userMenuService.myMenuItems(data);
-        console.log(this.menuItems);
       });
   }
 
