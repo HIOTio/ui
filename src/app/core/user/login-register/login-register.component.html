@@ -1,43 +1,100 @@
-<mat-tab-group class="pad">
-  <mat-tab label="Login">
-    <div fxLayout="row wrap">
-      <div fxFlex="100%" fxFlex.gt-sm="50%">
-        <div fxLayout="column">
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Username/Email Address" [(ngModel)]="user.username">
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="password" type="password" [(ngModel)]="user.password">
-          </mat-form-field>
-          <button mat-button (click)="login()">Login</button>
-        </div>
-      </div>
-      <div fxFlex="100%" fxFlex.gt-sm="50%">
-        Login with an external Provider
-      </div>
-    </div>
+<div class="row">
+    <div class="col-md-6">
+        <form class="form-horizontal">
+            <fieldset>
 
-  </mat-tab>
-  <mat-tab label="Register">
-    <div fxLayout="column">
-      <mat-form-field>
-        <input matInput placeholder="First Name" [(ngModel)]="newUser.firstname" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Last Name" [(ngModel)]="newUser.lastname" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Email Address" [(ngModel)]="newUser.email" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="password" [(ngModel)]="newUser.password" type="password">
-      </mat-form-field>
-      <mat-form-field>
-            <input matInput placeholder="confirm password" [(ngModel)]="newUser.passwordConfirm" type="password">
-          </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Organisation" [(ngModel)]="newUser.Organisation">
-      </mat-form-field>
+                <legend>Login</legend>
+
+                <div class="form-group">
+                    <label class="col-md-10 control-label" for="textinput">Email address</label>
+                    <div class="col-md-10">
+                        <input id="textinput" name="textinput" type="text" [(ngModel)]="user.username" placeholder="email" class="form-control input-md">
+                        <span class="help-block">This is a required field</span>
+                    </div>
+                </div>
+
+                <!-- Password input-->
+                <div class="form-group">
+                    <label class="col-md-10 control-label" for="passwordinput">Password</label>
+                    <div class="col-md-10">
+                        <input id="passwordinput" name="passwordinput" type="password" [(ngModel)]="user.password" placeholder="" class="form-control input-md">
+                        <span class="help-block" *ngIf="loginStatus.errorMsg">
+                          {{loginStatus.errorMsg}}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <button id="singlebutton" name="singlebutton" class="btn btn-primary" (click)="login()">Login</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
     </div>
-  </mat-tab>
-</mat-tab-group>
+    <div class="col-md-6">
+        <form class="form-horizontal">
+            <fieldset>
+
+                <legend>Register</legend>
+
+
+
+                <div class="form-group">
+                    <label class="col-md-10 control-label" for="textinput">First name</label>
+                    <div class="col-md-10">
+                        <input id="textinput" name="textinput" type="text" placeholder="First Name" [(ngModel)]="newUser.firstname" required class="form-control input-md">
+                        <span class="help-block">This is a required field</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-10 control-label" for="textinput">Last name</label>
+                    <div class="col-md-10">
+                        <input id="textinput" name="textinput" type="text" placeholder="First Name" [(ngModel)]="newUser.firstname" required class="form-control input-md">
+                        <span class="help-block">This is a required field</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-10 control-label" for="textinput">Username or email address</label>
+                    <div class="col-md-10">
+                        <input id="textinput" name="textinput" type="email" placeholder="Email Address" [(ngModel)]="newUser.email" required class="form-control input-md">
+                        <span class="help-block">This is a required field</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-10 control-label" for="passwordinput">Password</label>
+                    <div class="col-md-10">
+                        <input id="passwordinput" name="passwordinput" type="password" placeholder="" [(ngModel)]="newUser.password" class="form-control input-md">
+                        <span class="help-block">minimum complexity rules</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-10 control-label" for="passwordinput">Confirm Password</label>
+                    <div class="col-md-10">
+                        <input id="passwordinput" name="passwordinput" type="password" placeholder="" [(ngModel)]="newUser.passwordConfirm" class="form-control input-md">
+                        <span class="help-block">sorry, passwords don't match</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-10 control-label" for="textinput">Organisation</label>
+                    <div class="col-md-10">
+                        <input id="textinput" name="textinput" type="text" placeholder="Organisation" [(ngModel)]="newUser.Organisation" class="form-control input-md">
+                        <span class="help-block">This is a required field</span>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Register</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>

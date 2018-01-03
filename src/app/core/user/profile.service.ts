@@ -14,6 +14,9 @@ export class ProfileService {
       email: ''
     });
   }
+  register() {
+    //TODO: allow users to register - need to define the profile schema first
+  }
   getUser() {
     return this.user;
   }
