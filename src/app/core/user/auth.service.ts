@@ -43,7 +43,7 @@ export class AuthService {
     this._deployments.getDeployments()
       .subscribe(data => {
         data.forEach(channel => {
-          this._updatesService.connect('ws://54.37.228.181/be/deployment_' + channel.deployment._id);
+          this._updatesService.connect(environment.wservice + '/deployment_' + channel.deployment._id);
         });
       });
   }
@@ -59,7 +59,7 @@ export class AuthService {
   }
   login(username, password, route): any {
     if (route === '') {
-      route = '/';
+      route = '/dashboard';
     }
     route.replace('\\', '/');
     this.http.post(environment.services + '/auth', { username: username, password: password })
@@ -94,6 +94,7 @@ export class AuthService {
       errorMsg: ''
     })
     localStorage.removeItem('token');
+    this._router.navigate(['/']);
   }
   userStatus() {
     return this.authStatus;

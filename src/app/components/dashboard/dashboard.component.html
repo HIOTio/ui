@@ -1,15 +1,24 @@
-<div fxLayoutWrap class='container' [dragula]='"first-bag"'>
-        <app-deployment-home-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">
+<div class="row" >
+  <div class="col-xs-12 col-sm-6 col-md-4" [dragula]='"first-bag"'>
+      <app-deployment-home-card class="home-card" >
+          
+              </app-deployment-home-card>
+              <div class="home-card" >Notifications</div>
+              <div class="home-card" >Data Trends (depends on deployment type)</div>
+          
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-4" [dragula]='"first-bag"'>
+      <div class="home-card" >Health Warnings</div>
+      <div class="home-card" >Something else</div>
+      <div class="home-card" >Offline Devices</div>
     
-        </app-deployment-home-card>
-        <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Notifications</mat-card>
-        <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Data Trends (depends on deployment type)</mat-card>
-        <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Health Warnings</mat-card>
-        <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Something else</mat-card>
-        <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Offline Devices</mat-card>
-        <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Simple card</mat-card>
-        <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Simple card</mat-card>
-        <mat-card class="home-card" fxFlex="32%" fxFlex.sm="48%" fxFlex.xs="95%">Simple card</mat-card>
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4" [dragula]='"first-bag"'>
+        <div class="home-card" >Simple card</div>
+        <div class="home-card" >Simple card</div>
+        <div class="home-card" >Simple card</div>
+    
       </div>
-    
-    
+</div>
+

@@ -22,5 +22,9 @@ export class ProfileButtonComponent implements OnInit {
       data => this.authenticated.loggedIn = data.loggedIn
     );
   }
+  logout(){
+    this._auth.logout();
+    
+  }
 
 }

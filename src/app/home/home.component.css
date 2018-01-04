@@ -49,17 +49,3 @@
     color: #00ff00;
 }
 
-.bg-grey {
-    border-color: #e8e9e8;
-    margin: 2px;
-    padding: 2px;
-    margin-bottom: 10px;
-    background-color: rgb(221, 230, 224);
-    border: 1px solid transparent;
-    border-radius: 12px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}

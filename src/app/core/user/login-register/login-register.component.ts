@@ -19,9 +19,10 @@ export class LoginRegisterComponent implements OnInit {
   };
   constructor(private _auth: AuthService) { }
   login() {
-    this.loginStatus = this._auth.login(this.user.username, this.user.password, '');
+    this._auth.login(this.user.username, this.user.password, '');
   }
   ngOnInit() {
+    this._auth.isAuthenticated().subscribe(data => this.loginStatus=data);
   }
 
 }

@@ -1,9 +1,9 @@
-<mat-card >
-  <mat-card-title>My Deployments</mat-card-title>
-  <mat-card-content>
+<div class="home-card">
+  <h2>My Deployments</h2>
+  <div>
     <div *ngFor="let deployment of deployments">
 {{deployment.deployment.name}}
     </div>
-  </mat-card-content>
-  <mat-card-actions><button mat-raised-button color="primary" routerLink="/deployment">Go</button></mat-card-actions>
-</mat-card>
+  </div>
+  <div><button class="btn btn-default" routerLink="/deployment">Go</button></div>
+</div>
