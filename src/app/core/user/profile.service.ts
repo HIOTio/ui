@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 @Injectable()
 export class ProfileService {
-  id = 0;
+  id = '';
   public user: BehaviorSubject<any>;
   constructor(private _http: HttpClient) {
     this.user = new BehaviorSubject<any>({
@@ -14,8 +14,19 @@ export class ProfileService {
       email: ''
     });
   }
-  register() {
-    //TODO: allow users to register - need to define the profile schema first
+  register(firstname, lastname, password, email) {
+    this._http.post(environment.services + '/register',
+      {
+        username: email,
+        password,
+        firstname,
+        lastname,
+        email
+      }).subscribe((data) => {
+        console.log('congrats');
+      }, (err) => {
+        console.log(err);
+      });
   }
   getUser() {
     return this.user;

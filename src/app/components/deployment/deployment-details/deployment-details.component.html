@@ -1,48 +1,56 @@
-<mat-spinner *ngIf="!details"></mat-spinner>
+<div *ngIf="!details">
+    <i class="fa fa-spinner fa-spin" style="font-size:48px;color:red"></i>
+</div>
+
 <div *ngIf="details">
-    <div *ngIf="edit">
-<app-deployment-edit [deployment]="details"></app-deployment-edit>
-<button mat-button color="accent" (click)="edit=false">Cancel</button>
+    <div *ngIf="!edit">
+        <div class="row">
+            <div class="col-10">
+                {{details.name}} <br/> {{details.description}}
+            </div>
+            <div class="col-2">
+                <span (click)="edit=true"><i class="fa fa-pencil" aria-hidden="true" ></i></span>
+            </div>
+        </div>
 
     </div>
-<mat-card *ngIf="!edit">
-  <mat-card-title>
-      {{details.name}} <mat-icon (click)="edit=true">mode_edit</mat-icon>
-  </mat-card-title>
-    <mat-card-subtitle>
-     {{details.description}}
-    </mat-card-subtitle>
-    <mat-card-content>
-        <mat-tab-group [(selectedIndex)]="selectedTabIndex">
-            <mat-tab label="Summary">
-
-                    
-            </mat-tab>
-            <mat-tab label="Users">
-
-                    <app-deployment-users-list [deployment]="details._id"></app-deployment-users-list>
-            </mat-tab>
-            <mat-tab label="Stats">
-
-            </mat-tab>
-
-            <mat-tab label="Devices">
-                    <app-device-list [deploymentId]="details._id"></app-device-list>
-                </mat-tab>
-                <mat-tab label="Real-Time">
-                    <app-real-time></app-real-time>
-                </mat-tab>
-                <mat-tab label="Settings">
-                        <div *ngIf="selectedTabIndex == 5">
-                                <app-deployment-settings [deployment]="details"></app-deployment-settings>
-                            </div>
-                    </mat-tab>
-        </mat-tab-group>
-    </mat-card-content>
-    <mat-card-actions>
-
-    </mat-card-actions>
-
-</mat-card>
-
+    <app-deployment-edit [deployment]="details" *ngIf="edit"></app-deployment-edit> <button class="btn btn-default" *ngIf="edit" (click)="edit=false">Cancel</button>
 </div>
+<ngb-tabset>
+    <ngb-tab title="Summary">
+        <ng-template ngbTabContent>
+            <app-deployment-summary></app-deployment-summary>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Users">
+        <ng-template ngbTabContent>
+
+            <app-deployment-users-list [deployment]="details._id"></app-deployment-users-list>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Stats">
+        <ng-template ngbTabContent>
+
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Devices">
+        <ng-template ngbTabContent>
+
+            <app-device-list [deploymentId]="details._id"></app-device-list>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Real-time">
+        <ng-template ngbTabContent>
+
+            <app-real-time></app-real-time>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Settings">
+        <ng-template ngbTabContent>
+
+            <app-deployment-settings [deployment]="details"></app-deployment-settings>
+        </ng-template>
+    </ngb-tab>
+
+
+</ngb-tabset>

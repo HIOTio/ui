@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CdkTableModule } from '@angular/cdk/table';
 
 import 'hammerjs';
@@ -31,8 +31,7 @@ import {
   MatTableModule,
   MatProgressSpinnerModule
 } from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -48,7 +47,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatInputModule,
     MatSidenavModule,
-    FlexLayoutModule,
     MatStepperModule,
     MatButtonModule,
     MatCheckboxModule,
@@ -84,7 +82,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatInputModule,
     MatSidenavModule,
-    FlexLayoutModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,

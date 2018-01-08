@@ -1,17 +1,32 @@
+<div class="row">
+    <div class="col-10">
+        <div class="form-group">
+            <label class="col-md-10 control-label" for="deploymentDescription">Name</label>
+            <div class="col-md-10">
+                <input id="deploymentDescription" name="deploymentDescription" type="text" placeholder="name..." [(ngModel)]="deployment.name" class="form-control input-md">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-10 control-label" for="deploymentDescription">Description</label>
+            <div class="col-md-10">
+                <input id="deploymentDescription" name="deploymentDescription" type="text" placeholder="description..." [(ngModel)]="deployment.description" class="form-control input-md">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-10 control-label" for="passwordinput3">Deployment Type</label>
+            <div class="col-md-10">
+                <select class="form-control" id="deploymentTyle" placeholder="Deployment type" [(ngModel)]="deployment.deploymentType">
+                    <option  *ngFor="let type of types" [value]="type._id">
+                      {{ type.name }}</option>
+                  </select>
+            </div>
+        </div>
+    </div>
 
 
-  <mat-form-field>
-<input matInput [(ngModel)]="deployment.name">
-</mat-form-field>
 
-<mat-form-field>
-<input matInput [(ngModel)]="deployment.description">
-</mat-form-field>
-<mat-form-field>
-        <mat-select placeholder="Deployment type" [(ngModel)]="deployment.deploymentType">
-          <mat-option *ngFor="let type of types" [value]="type._id">
-            {{ type.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <button mat-button (click)="updateDeployment()">Update</button>
+
+</div>
+
+<button class="btn btn-default" (click)="updateDeployment()">Update</button>

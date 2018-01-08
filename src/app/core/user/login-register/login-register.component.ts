@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { ProfileService } from '../profile.service';
 @Component({
   selector: 'app-login-register',
   templateUrl: './login-register.component.html',
@@ -15,14 +16,22 @@ export class LoginRegisterComponent implements OnInit {
     loggedIn: false
   };
   newUser = {
-
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: ''
   };
-  constructor(private _auth: AuthService) { }
+  passwordConfirm: '';
+  constructor(private _auth: AuthService, private _profile: ProfileService) { }
   login() {
     this._auth.login(this.user.username, this.user.password, '');
   }
   ngOnInit() {
-    this._auth.isAuthenticated().subscribe(data => this.loginStatus=data);
+    this._auth.isAuthenticated().subscribe(data => this.loginStatus = data);
   }
+  regUser() {
+    // perform a load of checks first
+    this._profile.register(this.newUser.firstname, this.newUser.lastname, this.newUser.password, this.newUser.email)
 
+  }
 }

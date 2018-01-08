@@ -16,6 +16,9 @@ export class DeploymentService {
   deploymentDetails(deploymentId): Observable<any> {
     return this._http.get(environment.services + '/api/deployment/' + deploymentId);
   }
+  deploymentSummary(deploymentId): Observable<any> {
+    return this._http.get(environment.services + '/api/deployment/summary/' + deploymentId);
+  }
   deploymentUsers(deploymentId): Observable<any> {
     return this._http.get(environment.services + '/api/deployment_role/deployment/' + deploymentId);
   }

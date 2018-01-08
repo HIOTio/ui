@@ -3,13 +3,14 @@ import { DeploymentService } from '../deployment.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
-  selector: 'app-deployment-details',
-  templateUrl: './deployment-details.component.html',
-  styleUrls: ['./deployment-details.component.css']
+  selector: 'app-deployment-summary',
+  templateUrl: './deployment-summary.component.html',
+  styleUrls: ['./deployment-summary.component.css']
 })
-export class DeploymentDetailsComponent implements OnInit {
+export class DeploymentSummaryComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private depServ: DeploymentService) { }
+
   deploymentId = 0;
   details: Observable<any>;
   edit = false;
@@ -17,10 +18,11 @@ export class DeploymentDetailsComponent implements OnInit {
     // subscribe to router event
     this.activatedRoute.params.subscribe((params: Params) => {
       this.deploymentId = params['id'];
-      this.depServ.deploymentDetails(this.deploymentId)
+      this.depServ.deploymentSummary(this.deploymentId)
         .subscribe(data => {
           this.details = data;
         });
     });
   }
 }
+
