@@ -10,15 +10,22 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UsersListComponent implements OnInit {
   @Input()
   deployment = 0;
+  roles: Observable<any>;
   users: Observable<any>;
   constructor(private _depServ: DeploymentService) { }
 
   ngOnInit() {
-    
+
     this._depServ.deploymentUsers(this.deployment)
-    .subscribe(data => {
-      this.users = data;
-    });
+      .subscribe(data => {
+        this.users = data;
+        console.log(data);
+      });
+    this._depServ.rolesforDeployment(this.deployment)
+      .subscribe(roles => {
+        console.log(roles);
+        this.roles = roles;
+      });
   }
 
 }

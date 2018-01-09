@@ -31,6 +31,9 @@ export class DeploymentService {
   updateDeployment(deployment): Observable<any> {
     return this._http.put(environment.services + '/api/deployment', deployment);
   }
+  rolesforDeployment(deployment): Observable<any> {
+    return this._http.get(environment.services + '/api/role');
+  }
   addDeploymentUser(deploymentUser): Observable<any> {
     return this._http.post(environment.services + '/api/deployment_user', deploymentUser);
   }

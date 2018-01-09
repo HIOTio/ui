@@ -1,4 +1,9 @@
 <ul>
-  <li *ngFor="let user of users">{{user.profile.firstname}} {{user.profile.lastname}}</li>
+    <li *ngFor="let user of users">{{user.profile.firstname}} {{user.profile.lastname}}
+        <select [(ngModel)]="user.role">
+        <option *ngFor="let role of roles" [ngValue]="role._id">{{role.name}}</option> 
+      </select>{{user.role._id}}
+    </li>
+
 </ul>
 <button mat-raised-button color="primary">add user</button>

@@ -21,6 +21,7 @@ import { DeploymentStatsComponent } from './deployment-stats/deployment-stats.co
 import { RealTimeComponent } from './real-time/real-time.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DeploymentSummaryComponent } from './deployment-summary/deployment-summary.component';
+import { SelectRolesComponent } from './users/select-roles/select-roles.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -48,7 +49,8 @@ import { DeploymentSummaryComponent } from './deployment-summary/deployment-summ
     DeploymentSettingsComponent,
     DeploymentStatsComponent,
     RealTimeComponent,
-    DeploymentSummaryComponent],
+    DeploymentSummaryComponent,
+    SelectRolesComponent],
   exports: [DeploymentHomeCardComponent]
 })
 export class DeploymentModule {
