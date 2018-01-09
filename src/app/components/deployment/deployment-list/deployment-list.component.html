@@ -1,20 +1,21 @@
 <div *ngIf='view=="cards"'>
-    <button mat-button (click)="viewToggle()">View as Table</button>
-<div *ngFor="let dep of deployments" class="padded">
-    <mat-card >
-        <mat-card-title>{{dep.deployment.name}}</mat-card-title>
-        <mat-card-content><div><i>Desc:</i> {{dep.deployment.description}}</div>
-          <div><i>My role:</i> {{dep.role.name}}</div>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button [routerLink]="'/deployment/'+dep.deployment._id" color="primary">Details</button>
-  
-        </mat-card-actions>
-      </mat-card>
- 
-  </div>  
+    <button class="btn btn-default" (click)="viewToggle()">View as Table</button>
+    <button class="btn btn-default" routerLink="create">Create a new Deployment</button>
+    <div *ngFor="let dep of deployments" class="padded">
+        <mat-card>
+            <mat-card-title>{{dep.deployment.name}}</mat-card-title>
+            <mat-card-content>
+                <div><i>Desc:</i> {{dep.deployment.description}}</div>
+                <div><i>My role:</i> {{dep.role.name}}</div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button [routerLink]="'/deployment/'+dep.deployment._id" color="primary">Details</button>
+
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
 </div>
-<div *ngIf='view=="table"'><button mat-button (click)="viewToggle()">View as Cards</button>
-  <app-deployment-table-view></app-deployment-table-view>
+<div *ngIf='view=="table"'><button class="btn btn-default" (click)="viewToggle()">View as Cards</button>
+    <app-deployment-table-view></app-deployment-table-view>
 </div>
-<button matButton routerLink="create">Create a new Deployment</button>

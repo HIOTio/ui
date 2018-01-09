@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { slideInOutAnimation } from '../core/animations/anim';
 import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
+import { AuthService } from '../core/user/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,9 +17,12 @@ export class HomeComponent implements OnInit {
     email: '',
     name: ''
   };
-  constructor(private _http: Http) { }
+  constructor(private _http: Http, private _auth: AuthService, private _router: Router) { }
 
   ngOnInit() {
+    if (this._auth.isAuthenticated()) {
+      this._router.navigate(['/dashboard']);
+    }
   }
   sendMail() {
     this.errMsg = this.okMsg = '';

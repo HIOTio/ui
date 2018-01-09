@@ -1,0 +1,10 @@
+<button class="btn btn-default" (click)="showUserPanel=true" *ngIf="!showUserPanel">add user</button>
+<button class="btn btn-default" (click)="showUserPanel=flase" *ngIf="showUserPanel">Cancel</button>
+<div *ngIf="showUserPanel">
+    Add a user:
+    <ul>
+        <li>list the users from this org</li>
+    </ul>
+    -- search for users by email etc.
+    <app-user-create></app-user-create>
+</div>

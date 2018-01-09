@@ -22,10 +22,12 @@ import { RealTimeComponent } from './real-time/real-time.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DeploymentSummaryComponent } from './deployment-summary/deployment-summary.component';
 import { SelectRolesComponent } from './users/select-roles/select-roles.component';
+import { UserModule } from '../../core/user/user.module';
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
+    UserModule,
     DeviceModule,
     LocationModule,
     NgbModule.forRoot(),

@@ -28,7 +28,7 @@ import { CarouselModule } from 'ngx-bootstrap';
 import { environment } from '../environments/environment';
 import { NotificationComponent } from './core/user/notification/notification.component';
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap/datepicker/datepicker-input';
-
+import { AuthGuardService } from './core/user/auth-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +56,7 @@ import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap/datepicker/datepi
     CarouselModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent }
+
     ])
   ],
   providers: [
