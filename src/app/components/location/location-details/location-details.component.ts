@@ -36,7 +36,7 @@ export class LocationDetailsComponent implements OnInit {
     this.locations.forEach((loca) => {
       if (loca._id = top) {
         parent = [];
-        loca.parent.forEach((par) {
+        loca.parent.forEach((par) => {
           parent.push(par._id);
         });
         parent.push(loca._id);
