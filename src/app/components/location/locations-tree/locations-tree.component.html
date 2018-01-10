@@ -1,3 +1,13 @@
-<p>
-  locations-tree works!
-</p>
+<div class="row">
+    <div class="col-md-6">
+        <ul>
+            <li *ngFor="let location of locations" (click)="showDetail(location)">
+                <span *ngFor="let path of location.parent">{{path.description}} -> </span> <b>{{location.description}}</b>
+            </li>
+        </ul>
+
+    </div>
+    <div class="col-md-6">
+        <app-location-details [loc]="details" *ngIf="details.show"></app-location-details>
+    </div>
+</div>

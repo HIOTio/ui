@@ -1,25 +1,16 @@
-<mat-expansion-panel #epLocation [expanded]="false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Locations
-      </mat-panel-title>
-      <mat-panel-description>
-        location count
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <app-locations-tree></app-locations-tree>
+<div *ngIf="stats">
+    <mat-expansion-panel #epLocation [expanded]="false">
+        <mat-expansion-panel-header>
+            Locations ({{stats.locations}})
+        </mat-expansion-panel-header>
+        <app-locations-tree [deployment]="deployment._id"></app-locations-tree>
 
-</mat-expansion-panel>
-<mat-expansion-panel #epUsers  [expanded]="false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Users
-      </mat-panel-title>
-      <mat-panel-description>
-        user count
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <app-deployment-users-list [deployment]="deployment._id"></app-deployment-users-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel #epUsers [expanded]="false">
+        <mat-expansion-panel-header>
+            Users ({{stats.users}})
+        </mat-expansion-panel-header>
+        <app-deployment-users-list [deployment]="deployment._id"></app-deployment-users-list>
 
-</mat-expansion-panel>
-
+    </mat-expansion-panel>
+</div>

@@ -14,8 +14,7 @@ export class UserAddComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.filter);
   }
 
-
+}
 

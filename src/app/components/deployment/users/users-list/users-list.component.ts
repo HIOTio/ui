@@ -19,11 +19,9 @@ export class UsersListComponent implements OnInit {
     this._depServ.deploymentUsers(this.deployment)
       .subscribe(data => {
         this.users = data;
-        console.log(data);
       });
     this._depServ.rolesforDeployment(this.deployment)
       .subscribe(roles => {
-        console.log(roles);
         this.roles = roles;
       });
   }

@@ -29,6 +29,8 @@ import { environment } from '../environments/environment';
 import { NotificationComponent } from './core/user/notification/notification.component';
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap/datepicker/datepicker-input';
 import { AuthGuardService } from './core/user/auth-guard.service';
+
+import { AlertModule } from 'ngx-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,7 @@ import { AuthGuardService } from './core/user/auth-guard.service';
     MaterialModule,
     DragulaModule,
     LayoutModule,
+    AlertModule.forRoot(),
     DashboardModule,
     AggregatorModule,
     DeploymentModule,

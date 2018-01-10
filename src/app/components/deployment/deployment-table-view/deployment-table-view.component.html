@@ -15,7 +15,7 @@
             <td>{{dep.deployment.name}}</td>
             <td>{{dep.deployment.description}}</td>
             <td>{{dep.role.name}}</td>
-            <td><button class="btn btn-dark">Details</button></td>
+            <td><button class="btn btn-dark" [routerLink]="'/deployment/'+dep.deployment._id" color="primary">Details</button></td>
             <td><button class="btn btn-danger">Edit</button></td>
         </tr>
 

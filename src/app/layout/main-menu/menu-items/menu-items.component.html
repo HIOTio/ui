@@ -1,6 +1,0 @@
-
-<span *ngFor="let item of menuItems">
-  <button *ngIf="orientation=='vert'" routerLinkActive="active" routerLink="{{item.link}}" mat-button (click)="closeSideNav($event,item.link)" class="fill">{{item.text}}</button>
-  <button *ngIf="orientation=='hori'" routerLinkActive="active" routerLink="{{item.link}}" mat-button >{{item.text}}</button>
-
-</span>

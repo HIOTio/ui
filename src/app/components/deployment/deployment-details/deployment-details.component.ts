@@ -12,7 +12,7 @@ export class DeploymentDetailsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private depServ: DeploymentService) { }
   deploymentId = 0;
   details: Observable<any>;
-  edit = false;
+  edit = { status: false };
   ngOnInit() {
     // subscribe to router event
     this.activatedRoute.params.subscribe((params: Params) => {

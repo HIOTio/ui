@@ -1,3 +1,18 @@
-<p>
-  location-details works!
-</p>
+<div *ngIf="loc.location">
+    Path: {{loc.topParent}}
+    <div class="form-group">
+        <label for="sel1">Parent:</label>
+        <select class="form-control" id="sel1" [(ngModel)]="loc.topParent"> 
+          <option value=''> NONE</option>
+          <option *ngFor="let location of locations" (click)="updateParent(location)" [ngValue]="location._id">
+            <span *ngFor="let path of location.parent">{{path.description}} -> </span> {{ location.description}}
+          </option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="loc.location.description">
+    </div>
+</div>
+
+<button type="button" class="btn btn-success" (click)="updateLocation()">Update</button>

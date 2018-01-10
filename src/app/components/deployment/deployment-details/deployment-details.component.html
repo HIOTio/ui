@@ -1,56 +1,65 @@
-<div *ngIf="!details">
-    <i class="fa fa-spinner fa-spin" style="font-size:48px;color:red"></i>
-</div>
-
-<div *ngIf="details">
-    <div *ngIf="!edit">
-        <div class="row">
-            <div class="col-10">
-                {{details.name}} <br/> {{details.description}}
-            </div>
-            <div class="col-2">
-                <span (click)="edit=true"><i class="fa fa-pencil" aria-hidden="true" ></i></span>
-            </div>
-        </div>
-
+<div class="card v75 m-5" *ngIf="details">
+    <div class="card-header">
+        <div *ngIf="!edit.status">
+            <h5>{{details.name}}</h5><span (click)="edit.status=true"><i class="fa fa-pencil  float-right" aria-hidden="true" ></i></span> {{details.description}}</div>
+        <app-deployment-edit [deployment]="details" *ngIf="edit.status" [(edit)]="edit"></app-deployment-edit> <button class="btn btn-default" *ngIf="edit.status" (click)="edit.status=false">Cancel</button>
     </div>
-    <app-deployment-edit [deployment]="details" *ngIf="edit"></app-deployment-edit> <button class="btn btn-default" *ngIf="edit" (click)="edit=false">Cancel</button>
+    <div class="card-body">
+        <ngb-tabset>
+            <ngb-tab title="Summary">
+                <ng-template ngbTabContent>
+                    <app-deployment-summary></app-deployment-summary>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Users">
+                <ng-template ngbTabContent>
+
+                    <app-deployment-users-list [deployment]="details._id"></app-deployment-users-list>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Stats">
+                <ng-template ngbTabContent>
+
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Devices">
+                <ng-template ngbTabContent>
+
+                    <app-device-list [deploymentId]="details._id"></app-device-list>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Real-time">
+                <ng-template ngbTabContent>
+
+                    <app-real-time></app-real-time>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Settings">
+                <ng-template ngbTabContent>
+
+                    <app-deployment-settings [deployment]="details"></app-deployment-settings>
+                </ng-template>
+            </ngb-tab>
+
+
+        </ngb-tabset>
+    </div>
+    <div class="card-footer">
+        <button class="btn dtn-default" [routerLink]="'/deployment'">Back to deployment list</button>
+    </div>
 </div>
-<ngb-tabset>
-    <ngb-tab title="Summary">
-        <ng-template ngbTabContent>
-            <app-deployment-summary></app-deployment-summary>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Users">
-        <ng-template ngbTabContent>
+<div *ngIf="!details">
+    <i class="fa fa-spinner fa-spin" style="font-size:48px;color:rgb(44, 85, 82)"></i>
+</div>
 
-            <app-deployment-users-list [deployment]="details._id"></app-deployment-users-list>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Stats">
-        <ng-template ngbTabContent>
+<div *ngIf="!edit">
+    <div class="row bg-grey">
+        <div class="col-10" well>
+            <br/>
+        </div>
+        <div class="col-2">
 
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Devices">
-        <ng-template ngbTabContent>
+        </div>
+    </div>
 
-            <app-device-list [deploymentId]="details._id"></app-device-list>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Real-time">
-        <ng-template ngbTabContent>
-
-            <app-real-time></app-real-time>
-        </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Settings">
-        <ng-template ngbTabContent>
-
-            <app-deployment-settings [deployment]="details"></app-deployment-settings>
-        </ng-template>
-    </ngb-tab>
-
-
-</ngb-tabset>
+</div>

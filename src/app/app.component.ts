@@ -3,8 +3,8 @@ import {
   trigger, state, style, animate, transition, query,
 } from '@angular/animations';
 import { UpdatesService } from './updates.service';
-import { DeploymentService} from './components/deployment/deployment.service';
-import {NotificationComponent} from './core/user/notification/notification.component';
+import { DeploymentService } from './components/deployment/deployment.service';
+import { NotificationComponent } from './core/user/notification/notification.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,7 +19,7 @@ import {NotificationComponent} from './core/user/notification/notification.compo
             width: '100%',
             transform: 'translateX(-100%)'
           }),
-          {optional: true}),
+          { optional: true }),
         // move page off screen right on leave
         query(':leave',
           animate('500ms ease',
@@ -29,7 +29,7 @@ import {NotificationComponent} from './core/user/notification/notification.compo
               transform: 'translateX(100%)'
             })
           ),
-        {optional: true}),
+          { optional: true }),
         // move page in screen from left to right
         query(':enter',
           animate('500ms ease',
@@ -38,22 +38,27 @@ import {NotificationComponent} from './core/user/notification/notification.compo
               transform: 'translateX(0%)'
             })
           ),
-        {optional: true}),
+          { optional: true }),
       ])
     ])
   ]
 })
-export class AppComponent implements OnInit{
-  title = 'app';
-  loading=true;
-  constructor() {
+export class AppComponent implements OnInit {
+  title = 'HIOT';
+  loading = true;
+  alerts = [];
+  constructor(private _updatesServ: UpdatesService) {
   }
-  sendMsg(){
+  sendMsg() {
   }
   getRouteAnimation(outlet) {
     return outlet.activatedRouteData.state;
   }
-  ngOnInit(){
-    this.loading=false;
+  ngOnInit() {
+    this.loading = false;
+
+    this._updatesServ.notifications.subscribe((data) => {
+      this.alerts.push(data);
+    });
   }
 }

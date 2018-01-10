@@ -1,8 +1,16 @@
 <mat-spinner *ngIf="loading">
 </mat-spinner>
+
 <hiot-main-menu></hiot-main-menu>
 <div class="v_filler"></div>
 <div [@routerAnimation]="getRouteAnimation(route)">
+    <div style="position: fixed; top: 70; right: 0; z-index:50">
+        <div *ngFor="let alert of alerts">
+            <alert type="success" dismissOnTimeout="{{alert.duration}}">
+                {{alert.message}}
+            </alert>
+        </div>
+    </div>
     <router-outlet class="main-view" #route="outlet"></router-outlet>
 
     <div style="height:50px"></div>
@@ -25,3 +33,4 @@
             </li>
         </ul>
     </nav>
+</div>

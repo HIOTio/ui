@@ -1,7 +1,6 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
 @import "~jsoneditor/dist/jsoneditor.min.css";
-
+@import "~bootstrap/dist/css/bootstrap.min.css";
 .bg-grey {
     border-color: #e8e9e8;
     margin: 2px;
@@ -17,7 +16,7 @@
     box-sizing: border-box;
 }
 
-.home-card{
+.home-card {
     border-color: #e8e9e8;
     margin: 2px;
     padding: 2px;

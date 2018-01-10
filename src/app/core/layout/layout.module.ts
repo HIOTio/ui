@@ -6,7 +6,7 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { UserMenuService } from './user-menu.service';
 import { CollapseModule } from 'ngx-bootstrap';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
-
+import { UpdatesService } from '../../updates.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +17,6 @@ import { Ng2PageScrollModule } from 'ng2-page-scroll';
   ],
   declarations: [MainMenuComponent],
   exports: [MainMenuComponent],
-  providers: [UserMenuService]
+  providers: [UserMenuService, UpdatesService]
 })
 export class LayoutModule { }

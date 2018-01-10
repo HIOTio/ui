@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { DeploymentService } from '../deployment.service';
 import { Observable } from 'rxjs/Observable';
 @Component({
@@ -9,7 +9,8 @@ import { Observable } from 'rxjs/Observable';
 export class DeploymentEditComponent implements OnInit {
   @Input()
   deployment;
-
+  @Input() @Output()
+  edit;
   constructor(private _deployment: DeploymentService) { }
   types: Observable<any>;
 
@@ -18,12 +19,12 @@ export class DeploymentEditComponent implements OnInit {
       .subscribe(data => {
         this.types = data;
       });
-    console.log(this.deployment);
   }
   updateDeployment() {
 
     this._deployment.updateDeployment(this.deployment)
       .subscribe();
+    this.edit.status = false;
   }
 
 }

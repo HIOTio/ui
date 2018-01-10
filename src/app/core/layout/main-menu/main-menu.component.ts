@@ -46,6 +46,7 @@ export class MainMenuComponent implements OnInit {
       .subscribe(data => {
         this.menuItems = this.userMenuService.myMenuItems(data);
       });
+
   }
 
 }
