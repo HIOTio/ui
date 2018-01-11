@@ -12,7 +12,8 @@ export class DeploymentCreateComponent implements OnInit {
     name: '',
     description: '',
     type: {},
-    owner: ''
+    owner: '',
+    deploymentType: ''
   };
   constructor(private _deployment: DeploymentService, private _profile: ProfileService) { }
   types: Observable<any>;

@@ -51,6 +51,10 @@ export class AuthService {
     this._profile.setUser(this.jwtHelper.decodeToken(token).id);
 
   }
+  public amILoggedIn() {
+    return this.authStatus.getValue();
+  }
+
   public isAuthenticated(): Observable<any> {
     return this.authStatus;
   }

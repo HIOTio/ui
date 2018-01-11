@@ -20,7 +20,8 @@ export class HomeComponent implements OnInit {
   constructor(private _http: Http, private _auth: AuthService, private _router: Router) { }
 
   ngOnInit() {
-    if (this._auth.isAuthenticated()) {
+    if (this._auth.amILoggedIn().loggedIn) {
+      
       this._router.navigate(['/dashboard']);
     }
   }

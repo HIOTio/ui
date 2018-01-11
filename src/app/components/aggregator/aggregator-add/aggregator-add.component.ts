@@ -18,8 +18,11 @@ export class AggregatorAddComponent implements OnInit {
     _id: '',
     poll: 0,
     device: '',
-    deployment: ''
+    deployment: '',
+    channel: '',
+    handler: ''
   };
+  handlers=[];
   constructor(private _aggServ: AggregatorService) { }
 
   ngOnInit() {

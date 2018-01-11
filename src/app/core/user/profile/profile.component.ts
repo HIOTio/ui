@@ -6,7 +6,13 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user = [];
+  user={
+    username: '',
+        firstname: '',
+        lastname: '',
+        email:'',
+        organisation:''
+  }
   updatePass = false;
   constructor(private _ps: ProfileService) { }
 

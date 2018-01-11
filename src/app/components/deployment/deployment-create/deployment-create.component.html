@@ -19,7 +19,7 @@
     <label class="col-md-10 control-label" for="passwordinput3">Deployment Type</label>
     <div class="col-md-10">
         <select class="form-control" id="deploymentTyle" placeholder="Deployment type" [(ngModel)]="deployment.deploymentType">
-        <option  *ngFor="let type of types" [value]="type._id">
+        <option  *ngFor="let type of types" [ngValue]="type._id">
           {{ type.name }}</option>
       </select>
     </div>

@@ -18,7 +18,7 @@ export class DeviceAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  showDialog(deployment): void {
+  showDialog(): void {
     console.log('opening dialog');
     const dialogRef = this.dialog.open(DialogAddComponent, {
       width: '80%',
