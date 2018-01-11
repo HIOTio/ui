@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { LocationService } from '../location.service';
 
 @Component({
   selector: 'app-locations-list-select',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./locations-list-select.component.css']
 })
 export class LocationsListSelectComponent implements OnInit {
-
-  constructor() { }
+  @Input() @Output()
+  location;
+  @Input()
+  deployment;
+  locations: any;
+  constructor(private _locServ: LocationService) { }
 
   ngOnInit() {
+    this._locServ.deploymentLocations(this.deployment)
+      .subscribe((data) => {
+        this.locations = data;
+      });
+
   }
 
 }

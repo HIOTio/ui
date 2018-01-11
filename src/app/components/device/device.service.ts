@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+
 @Injectable()
 export class DeviceService {
   public device: Observable<any>;
@@ -16,5 +17,8 @@ export class DeviceService {
   }
   newDevice() {
     return this.device;
+  }
+  deviceDetails(deviceId) {
+    return this._http.get(environment.services + '/api/device/' + deviceId);
   }
 }

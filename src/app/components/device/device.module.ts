@@ -9,16 +9,32 @@ import { DeviceListComponent } from './device-list/device-list.component';
 import { DeviceAddComponent, DialogAddComponent } from './device-add/device-add.component';
 import { DeviceConfigComponent } from './device-config/device-config.component';
 import { EnrolledTableComponent } from './enrolled-table/enrolled-table.component';
+import { DeviceDetailsComponent } from './device-details/device-details.component';
+import { RouterModule } from '@angular/router';
+import { AuthGuardService } from '../../core/user/auth-guard.service';
+import { CompatibilityService } from '../../core/compatibility.service';
+import { MakeModelModule } from '../../core/make-model/make-model.module';
+import { LocationModule } from '../location/location.module';
+import { AccordionModule } from 'ngx-bootstrap';
+import { AggregatorModule } from '../aggregator/aggregator.module';
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    MakeModelModule,
+    LocationModule,
+    AggregatorModule,
+    AccordionModule.forRoot(),
+    ReactiveFormsModule,
+    RouterModule.forChild([
+      { path: 'device/:deployment/:id', component: DeviceDetailsComponent, data: { state: 'deployment' }, canActivate: [AuthGuardService] }
+    ]
+    )
   ],
-  declarations: [DeviceHomeComponent, DeviceListComponent, DeviceAddComponent, DialogAddComponent, DeviceConfigComponent, EnrolledTableComponent],
+  declarations: [DeviceHomeComponent, DeviceListComponent, DeviceAddComponent, DialogAddComponent, DeviceConfigComponent, EnrolledTableComponent, DeviceDetailsComponent],
   exports: [DeviceListComponent],
-  providers: [DeviceService],
+  providers: [DeviceService, CompatibilityService],
   entryComponents: [DialogAddComponent]
 })
 export class DeviceModule { }

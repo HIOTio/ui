@@ -1,3 +1,6 @@
-<p>
-  locations-list-select works!
-</p>
+<div class="form-group row">
+    <div class="col-sm-2">Location</div>
+    <select class="custom-select col-sm-10" [(ngModel)]="location">
+        <option *ngFor="let location of locations" [ngValue]="location._id">{{location.description}}</option>
+        </select>
+</div>

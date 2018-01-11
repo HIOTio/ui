@@ -1,0 +1,108 @@
+<div class="card v75 m-5">
+    <div class="card-header">
+        <span *ngIf="device">{{device.name}}</span>
+        <a [routerLink]="'/deployment/' + deploymentId" class="float-right">Back to Deployment</a>
+    </div>
+    <div *ngIf="device"><i class="float-right">{{device._id}}</i></div>
+
+    <div class="card-body">
+        <div *ngIf="device">
+            <div class="form-group row">
+                <label for="deviceName" class="col-md-2 col-form-label">Device ID</label>
+                <input class="form-control col-md-8" type="text" id="deviceName" [(ngModel)]="device.deviceId" readonly *ngIf="roID">
+                <input class="form-control col-md-6" type="text" id="deviceName" [(ngModel)]="device.deviceId" *ngIf="!roID">
+                <button class="btn btn-danger col-md-2" (click)="roID=false" *ngIf="roID">Change</button>
+                <button class="btn btn-success col-md-2" (click)="updateDeviceID()" *ngIf="!roID">Save</button>
+                <button class="btn btn-warning col-md-2" (click)="roID=true" *ngIf="!roID">Cancel</button>
+            </div>
+            <div class="form-group row">
+                <label for="deviceName" class="col-md-2 col-form-label">Name</label>
+                <input class="form-control col-md-10" type="text" id="deviceName" [(ngModel)]="device.name">
+            </div>
+            <div class="form-group row">
+                <label for="deviceDescription" class="col-md-2 col-form-label">Description</label>
+                <input class="form-control col-md-10" type="text" id="deviceDescription" [(ngModel)]="device.description">
+            </div>
+            <app-locations-list-select [deployment]="deploymentId" [(location)]="device.location"></app-locations-list-select>
+            <div class="form-group row">
+                <label class=" col-sm-2" for="mosca">
+                    Mosca Enabled
+                  </label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="mosca" [(ngModel)]="device.moscaEnabled">
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2">Active</div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                        <label class="form-check-label" for="gridCheck1">
+                    </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="level" class="col-sm-2">Compatibility Level</label>
+                <select class="custom-select col-sm-10" id="level" name="level" [(ngModel)]="device.compatibility">
+                        <option *ngFor="let compatLevel of compat" [ngValue]="compatLevel.level">{{compatLevel.compatibility}}</option>
+                      </select>
+            </div>
+
+            <app-make-model [make]="device.make" [model]="device.model"></app-make-model>
+
+
+            Roles
+            <accordion [closeOthers]="true">
+                <accordion-group #groupA>
+                    <div accordion-heading class="clearfix">
+                        Aggregators
+                        <span class="badge badge-secondary float-right pull-right">{{device.aggregators.length}}</span>
+                    </div>
+                    <app-aggregator-list [(device)]="device._id" [(deployment)]="deploymentId"></app-aggregator-list>
+                </accordion-group>
+                <accordion-group #groupB>
+                    <div accordion-heading class="clearfix">
+                        Brokers
+                        <span class="badge badge-secondary float-right pull-right">{{device.brokers.length}}</span>
+                    </div>
+                    This is just some content to illustrate fancy headings.
+                </accordion-group>
+                <accordion-group #groupCon>
+                    <div accordion-heading class="clearfix">
+                        Controllers
+                        <span class="badge badge-secondary float-right pull-right">{{device.controllers.length}}</span>
+                    </div>
+                    This is just some content to illustrate fancy headings.
+                </accordion-group>
+                <accordion-group #groupCoor>
+                    <div accordion-heading class="clearfix">
+                        Coordinator
+                        <span class="badge badge-secondary float-right pull-right">{{device.coordinator? 'Y': 'N'}}</span>
+                    </div>
+                    This is just some content to illustrate fancy headings.
+                </accordion-group>
+                <accordion-group #groupS>
+                    <div accordion-heading class="clearfix">
+                        Sensors
+                        <span class="badge badge-secondary float-right pull-right">{{device.sensors.length}}</span>
+                    </div>
+                    This is just some content to illustrate fancy headings.
+                </accordion-group>
+                <accordion-group #groupM>
+                    <div accordion-heading class="clearfix">
+                        MQTT Broker List
+                        <span class="badge badge-secondary float-right pull-right">{{device.mqttBrokers.length}}</span>
+                    </div>
+                    This is just some content to illustrate fancy headings.
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>
+    <div class="card-footer">
+
+    </div>
+</div>

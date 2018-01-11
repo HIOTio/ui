@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   declarations: [LocationsTreeComponent, LocationsListSelectComponent, LocationsAddComponent, LocationDetailsComponent, LocationEditComponent],
-  exports: [LocationsTreeComponent, LocationsListSelectComponent, LocationsAddComponent, LocationDetailsComponent, LocationEditComponent],
+  exports: [LocationsTreeComponent, LocationsListSelectComponent, LocationsAddComponent, LocationDetailsComponent, LocationEditComponent, LocationsListSelectComponent],
   providers: [LocationService]
 })
 export class LocationModule { }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AggregatorService } from '../aggregator.service';
 
 @Component({
   selector: 'app-aggregator-list',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aggregator-list.component.css']
 })
 export class AggregatorListComponent implements OnInit {
-
-  constructor() { }
+  @Input()
+  device;
+  @Input()
+  deployment;
+  aggregators: any;
+  add: false;
+  constructor(private _aggServ: AggregatorService) { }
 
   ngOnInit() {
+    this._aggServ.getAggregatorsForDevice(this.device)
+      .subscribe((data) => {
+        this.aggregators = data;
+        console.log(this.aggregators);
+      });
+  }
+  addAgg() {
+    this.add = false;
   }
 
 }

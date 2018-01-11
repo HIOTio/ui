@@ -1,3 +1,17 @@
-<p>
-  aggregator-list works!
-</p>
+<div *ngIf="!add">
+    <button class="btn btn-default" (click)="add=true">Add Aggregator</button>
+    <div>
+        <ul *ngIf="aggregators">
+            <li *ngFor="let agg of aggregators" (click)="aggr=agg" [ngClass]="{'bg-grey': aggr===agg}"><b>{{agg.name}}</b> {{agg.description}}</li>
+        </ul>
+    </div>
+
+    <app-aggregator-edit [agg]="aggr"></app-aggregator-edit>
+
+</div>
+<div *ngIf="add">
+    <app-aggregator-add [device]="device" [(deployment)]="deployment"></app-aggregator-add>
+
+    <button class="btn btn-default" (click)="addAgg()">Add</button>
+    <button class="btn btn-default" (click)="add=false">Cancel</button>
+</div>
