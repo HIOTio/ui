@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../material/material.module';
 import { DeviceHomeComponent } from './device-home/device-home.component';
 import { DeviceListComponent } from './device-list/device-list.component';
-import { DeviceAddComponent, DialogAddComponent } from './device-add/device-add.component';
+import { DeviceAddComponent } from './device-add/device-add.component';
 import { DeviceConfigComponent } from './device-config/device-config.component';
 import { EnrolledTableComponent } from './enrolled-table/enrolled-table.component';
 import { DeviceDetailsComponent } from './device-details/device-details.component';
@@ -28,14 +28,14 @@ import { AggregatorModule } from '../aggregator/aggregator.module';
     AccordionModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forChild([
+      { path: 'device/add/:deployment', component: DeviceAddComponent, data: { state: 'deployment' }, canActivate: [AuthGuardService] },
       { path: 'device/:deployment/:id', component: DeviceDetailsComponent, data: { state: 'deployment' }, canActivate: [AuthGuardService] }
     ]
     )
   ],
-  declarations: [DeviceHomeComponent, DeviceListComponent, DeviceAddComponent, DialogAddComponent, DeviceConfigComponent, EnrolledTableComponent, DeviceDetailsComponent],
+  declarations: [DeviceHomeComponent, DeviceListComponent, DeviceAddComponent, DeviceConfigComponent, EnrolledTableComponent, DeviceDetailsComponent],
   exports: [DeviceListComponent],
-  providers: [DeviceService, CompatibilityService],
-  entryComponents: [DialogAddComponent]
+  providers: [DeviceService, CompatibilityService]
 })
 export class DeviceModule { }
 

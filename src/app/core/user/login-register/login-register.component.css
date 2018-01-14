@@ -16,3 +16,18 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+.panel-danger {
+    margin-bottom: 0;
+    border-color: #9e0b23;
+    margin-bottom: 20px;
+    background-color: rgb(122, 8, 8);
+    color: #ffffff;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

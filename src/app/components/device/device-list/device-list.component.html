@@ -1,4 +1,4 @@
 <mat-list>
     <mat-list-item *ngFor="let device of devices"><a [routerLink]="'/device/' + deploymentId + '/' + device._id">{{ device.name}}</a></mat-list-item>
 </mat-list>
-<app-device-add [deployment]="deploymentId"></app-device-add>
+<button class="btn btn-default" [routerLink]="'/device/add/' + deploymentId">Add a new device</button>
