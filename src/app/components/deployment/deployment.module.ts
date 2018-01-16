@@ -23,6 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DeploymentSummaryComponent } from './deployment-summary/deployment-summary.component';
 import { SelectRolesComponent } from './users/select-roles/select-roles.component';
 import { UserModule } from '../../core/user/user.module';
+import { DeploymentMapComponent } from './deployment-map/deployment-map.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -52,7 +53,8 @@ import { UserModule } from '../../core/user/user.module';
     DeploymentStatsComponent,
     RealTimeComponent,
     DeploymentSummaryComponent,
-    SelectRolesComponent],
+    SelectRolesComponent,
+    DeploymentMapComponent],
   exports: [DeploymentHomeCardComponent]
 })
 export class DeploymentModule {

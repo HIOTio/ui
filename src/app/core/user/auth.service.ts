@@ -86,7 +86,7 @@ export class AuthService {
       error => {
         this.authStatus.next({
           loggedIn: false,
-          errorMsg: 'Invalid user or password'
+          errorMsg: 'Invalid username or password'
         });
         return this.authStatus;
       }
