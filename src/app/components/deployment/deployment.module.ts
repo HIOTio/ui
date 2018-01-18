@@ -24,6 +24,7 @@ import { DeploymentSummaryComponent } from './deployment-summary/deployment-summ
 import { SelectRolesComponent } from './users/select-roles/select-roles.component';
 import { UserModule } from '../../core/user/user.module';
 import { DeploymentMapComponent } from './deployment-map/deployment-map.component';
+import { ControllerModule } from '../controller/controller.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -31,6 +32,7 @@ import { DeploymentMapComponent } from './deployment-map/deployment-map.componen
     UserModule,
     DeviceModule,
     LocationModule,
+    ControllerModule,
     NgbModule.forRoot(),
     RouterModule.forChild([
       { path: 'deployment', component: DeploymentListComponent, data: { state: 'deployment' }, canActivate: [AuthGuardService] },
