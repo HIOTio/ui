@@ -8,7 +8,7 @@ import { ControllerService } from '../controller.service';
 export class ControllerListComponent implements OnInit {
   @Input()
   deploymentId = '';
-  controllers = [];
+  controllers: any;
   constructor(private _controllerServ: ControllerService) { }
 
   ngOnInit() {

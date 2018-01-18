@@ -67,14 +67,14 @@
                 <accordion-group #groupB>
                     <div accordion-heading class="clearfix">
                         Brokers
-                        <span class="badge badge-secondary float-right pull-right">{{device.brokers.length}}</span>
+                        <span *ngIf="device.brokers" class="badge badge-secondary float-right pull-right">{{device.brokers.length}}</span>
                     </div>
                     This is just some content to illustrate fancy headings.
                 </accordion-group>
                 <accordion-group #groupCon>
                     <div accordion-heading class="clearfix">
                         Controllers
-                        <span class="badge badge-secondary float-right pull-right">{{device.controllers.length}}</span>
+                        <span *ngIf="device.controllers" class="badge badge-secondary float-right pull-right">{{device.controllers.length}}</span>
                     </div>
                     This is just some content to illustrate fancy headings.
                 </accordion-group>
@@ -88,9 +88,9 @@
                 <accordion-group #groupS>
                     <div accordion-heading class="clearfix">
                         Sensors
-                        <span class="badge badge-secondary float-right pull-right">{{device.sensors.length}}</span>
+                        <span *ngIf="device.sensors" class="badge badge-secondary float-right pull-right">{{device.sensors.length}}</span>
                     </div>
-                    This is just some content to illustrate fancy headings.
+                    <app-sensor-list [deployment]="deploymentId"></app-sensor-list>
                 </accordion-group>
                 <accordion-group #groupM>
                     <div accordion-heading class="clearfix">

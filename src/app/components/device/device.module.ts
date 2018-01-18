@@ -17,6 +17,8 @@ import { MakeModelModule } from '../../core/make-model/make-model.module';
 import { LocationModule } from '../location/location.module';
 import { AccordionModule } from 'ngx-bootstrap';
 import { AggregatorModule } from '../aggregator/aggregator.module';
+import { SensorModule } from '../sensor/sensor.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { AggregatorModule } from '../aggregator/aggregator.module';
     MakeModelModule,
     LocationModule,
     AggregatorModule,
+    SensorModule,
     AccordionModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forChild([

@@ -9,6 +9,7 @@ import { Component, OnInit, Inject, Input } from '@angular/core';
   styleUrls: ['./device-add.component.css']
 })
 export class DeviceAddComponent implements OnInit {
+  device:any;
   deploymentId='';
   constructor(private activatedRoute: ActivatedRoute) { }
 
