@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { DeploymentService } from '../../deployment.service';
 import { Component, OnInit, Input } from '@angular/core';
 

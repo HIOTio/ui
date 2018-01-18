@@ -1,4 +1,4 @@
-import { BehaviorSubject } from 'rxjs/Rx';
+import { BehaviorSubject } from 'rxjs/Observable';
 import { DeploymentService } from '../../components/deployment/deployment.service';
 import { UpdatesService } from '../../updates.service';
 import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
