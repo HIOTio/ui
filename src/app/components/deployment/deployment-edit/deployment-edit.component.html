@@ -16,7 +16,7 @@
         <div class="form-group">
             <label class="col-md-10 control-label" for="passwordinput3">Deployment Type</label>
             <div class="col-md-10">
-                <select class="form-control" id="deploymentTyle" placeholder="Deployment type" [(ngModel)]="deployment.deploymentType">
+                <select class="form-control" id="deploymentTyle" placeholder="Deployment type" [(ngModel)]="deployment.deploymentType._id">
                     <option  *ngFor="let type of types" [value]="type._id">
                       {{ type.name }}</option>
                   </select>

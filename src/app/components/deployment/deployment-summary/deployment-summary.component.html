@@ -5,7 +5,7 @@
     <li><b>Description:</b> {{details.dep.description}}</li>
     <li><b>Created date:</b> {{details.dep.added | date: "dd MMM yyyy @ hh:mm a"}}</li>
     <li><b>Number of users:</b> {{details.users}}</li>
-    <li><b>Deployment status:</b> {{details.dep.status}}</li>
+    <li><b>Active:</b> {{details.dep.active? 'Yes':'No'}}</li>
     <li><b>Number of devices:</b> {{details.devices}}</li>
     <li><b>Number of locations:</b> {{details.locations}}</li>
     <li><b>Any errors</b> [TODO]</li>

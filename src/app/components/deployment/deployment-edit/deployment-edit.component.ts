@@ -24,7 +24,7 @@ export class DeploymentEditComponent implements OnInit {
 
     this._deployment.updateDeployment(this.deployment)
       .subscribe();
-    this.edit.status = false;
+    window.location.reload();
   }
 
 }
