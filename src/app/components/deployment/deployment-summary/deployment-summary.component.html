@@ -1,11 +1,13 @@
 <ul *ngIf="details">
-    <li>Name: {{details.dep.name}}</li>
-    <li>Description: {{details.dep.description}}</li>
-    <li>Created date: {{details.dep.added | date: "dd MMM yyyy @ hh:mm a"}}</li>
-    <li>Number of users: {{details.users}}</li>
-    <li>Deployment status: {{details.dep.status}}</li>
-    <li>Number of devices: {{details.devices}}</li>
-    <li>Number of locations: {{details.locations}}</li>
-    <li>Any errors [TODO]</li>
-    <li>Any warnings [TODO]</li>
+    <li><b>Organisation:</b> {{details.dep.organisation.name}}</li>
+    <li><b>Deployment Type:</b> {{details.dep.deploymentType.name}}</li>
+    <li><b>Name:</b> {{details.dep.name}}</li>
+    <li><b>Description:</b> {{details.dep.description}}</li>
+    <li><b>Created date:</b> {{details.dep.added | date: "dd MMM yyyy @ hh:mm a"}}</li>
+    <li><b>Number of users:</b> {{details.users}}</li>
+    <li><b>Deployment status:</b> {{details.dep.status}}</li>
+    <li><b>Number of devices:</b> {{details.devices}}</li>
+    <li><b>Number of locations:</b> {{details.locations}}</li>
+    <li><b>Any errors</b> [TODO]</li>
+    <li><b>Any warnings</b> [TODO]</li>
 </ul>

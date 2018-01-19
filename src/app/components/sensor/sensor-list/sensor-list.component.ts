@@ -6,16 +6,27 @@ import { SensorService } from '../sensor.service';
   styleUrls: ['./sensor-list.component.css']
 })
 export class SensorListComponent implements OnInit {
-  sensors:any;
+  sensors: any;
   @Input()
   deployment;
-  constructor( private _sensorServ: SensorService) { }
+  @Input()
+  device;
+  constructor(private _sensorServ: SensorService) { }
 
   ngOnInit() {
-    this._sensorServ.deploymentSensors(this.deployment)
-    .subscribe((data) => {
-      this.sensors=data;
-    });
+    if (this.device) {
+      this._sensorServ.deviceSensors(this.device)
+        .subscribe((data) => {
+          this.sensors = data;
+          console.log(data);
+        });
+    } else {
+      this._sensorServ.deploymentSensors(this.deployment)
+        .subscribe((data) => {
+          this.sensors = data;
+          console.log(data);
+        });
+    }
   }
 
 }

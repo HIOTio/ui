@@ -90,7 +90,7 @@
                         Sensors
                         <span *ngIf="device.sensors" class="badge badge-secondary float-right pull-right">{{device.sensors.length}}</span>
                     </div>
-                    <app-sensor-list [deployment]="deploymentId"></app-sensor-list>
+                    <app-sensor-list [deployment]="deploymentId" [device]="device._id"></app-sensor-list>
                 </accordion-group>
                 <accordion-group #groupM>
                     <div accordion-heading class="clearfix">

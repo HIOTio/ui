@@ -8,7 +8,10 @@ import { environment } from '../../../environments/environment';
 export class SensorService {
 
   constructor(private _http: HttpClient) { }
-  deploymentSensors(deployment){
-    return this._http.get(environment.services + '/api/sensor/deployment/'+ deployment);
+  deploymentSensors(deployment) {
+    return this._http.get(environment.services + '/api/sensor/deployment/' + deployment);
+  }
+  deviceSensors(device) {
+    return this._http.get(environment.services + '/api/sensor/device/' + device);
   }
 }

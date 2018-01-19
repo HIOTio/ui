@@ -2,13 +2,13 @@
     <div class="card-header">
         <div *ngIf="!edit.status">
             <h5>{{details.name}}</h5><span (click)="edit.status=true"><i class="fa fa-pencil  float-right" aria-hidden="true" ></i></span> {{details.description}}</div>
-        <app-deployment-edit [deployment]="details" *ngIf="edit.status" [(edit)]="edit"></app-deployment-edit> <button class="btn btn-default" *ngIf="edit.status" (click)="edit.status=false">Cancel</button>
+        <app-deployment-edit [deployment]="details" (ngModelChange)="doSomething($event)" *ngIf="edit.status" [(edit)]="edit"></app-deployment-edit> <button class="btn btn-default" *ngIf="edit.status" (click)="edit.status=false">Cancel</button>
     </div>
     <div class="card-body">
         <ngb-tabset>
             <ngb-tab title="Summary">
                 <ng-template ngbTabContent>
-                    <app-deployment-summary></app-deployment-summary>
+                    <app-deployment-summary [deployment]="details._id"></app-deployment-summary>
                 </ng-template>
             </ngb-tab>
             <ngb-tab title="Users">
